@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pizzahut">
+    <meta name="keywords" content="pizza, chicken, pasta">
+    <meta name="author" content="Seunghyun">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzahut</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/common_media.css">
+    <link rel="stylesheet" href="css/main_style.css">
+    <!-- 나의 media css -->
+    <script src="https://kit.fontawesome.com/feb8d1a54e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top_banner">
+            <a href="#">지금 회원가입 및 로그인시 1만원 할인에 추가 혜택을 드려요!</a>
+        </div><!-- //.top_banner -->
+        <header>
+            <div class="inner">
+                <div class="left_info">
+                    <h1><a href="#"><img src="img/피자헛로고.png" alt="피자헛"></a></h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#">메뉴</a></li>
+                            <li><a href="#">이벤트&제휴</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#" class="more_btn">더보기<i class="fa-solid fa-angle-down"></i></a>
+                                <div class="lnb">
+                                    <div class="lnb_sub">
+                                        <div class="lnb_box">
+                                            <h3>메뉴</h3>
+                                            <ul>
+                                                <li><a href="#">피자</a></li>
+                                                <li><a href="#">치킨</a></li>
+                                                <li><a href="#">파스타&사이드</a></li>
+                                                <li><a href="#">음료&기타</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>이벤트&제휴</h3>
+                                            <ul>
+                                                <li><a href="#">이벤트</a></li>
+                                                <li><a href="#">제휴</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>쿠폰&멤버십</h3>
+                                            <ul>
+                                                <li><a href="#">모바일상품권</a></li>
+                                                <li><a href="#">모바일상품권 구매</a></li>
+                                                <li><a href="#">피자헛 멤버십</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>단체주문</h3>
+                                            <ul>
+                                                <li><a href="#">단체배달 & 포장</a></li>
+                                                <li><a href="#">지류 상품권</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>매장찾기</h3>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>브랜드</h3>
+                                            <ul>
+                                                <li><a href="#">브랜드</a></li>
+                                                <li><a href="#">인재채용</a></li>
+                                                <li><a href="#">창업안내</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>피자헛 소식</h3>
+                                            <ul>
+                                                <li><a href="#">보도자료</a></li>
+                                                <li><a href="#">공지사항</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>고객센터</h3>
+                                            <ul>
+                                                <li><a href="#">자주묻는질문</a></li>
+                                                <li><a href="#">1 : 1 문의</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                    </div><!-- //.lnb_sub -->
+                                </div><!-- //.lnb -->
+                            </li>
+                        </ul>
+                    </nav>
+                </div><!-- //.left_info -->
+                <div class="right_info">
+                    <div class="search">
+                        <form>
+                            <fieldset>
+                                <input type="text" class="srh_input" placeholder="검색어를 입력하세요">
+                                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </fieldset>
+                        </form>
+                    </div><!-- //.search -->
+                    <div class="login icon_btn">
+                        <a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    </div><!-- //.login -->
+                    <div class="join icon_btn">
+                        <a href="#"><i class="fa-solid fa-user-plus"></i></a>
+                    </div><!-- //.join -->
+                    <div class="cart icon_btn">
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div><!-- //.cart -->
+                </div><!-- //.right_info -->
+            </div><!-- //.inner -->
+        </header>
+        <main>
+            <section class="banner" aria-label="메인 배너">
+                <div class="banner_all">
+                    <div class="banner_track">
+                        <article class="banner_box banner_box01 is_active">
+                            <div class="banner_media">
+                                <img src="img/상단배너01.png" alt="봄 시즌 마르게리타 피자 프로모션 배너">
+                            </div>
+                            <div class="banner_text">
+                                <p class="txt_top">봄내음이 느껴지는 싱그러움</p>
+                                <p class="txt_top">마르게리타 피자의 재해석</p>
+                                <p class="txt_middle">페퍼론치노 마르게리타</p>
+                            </div>
+                            <p class="txt_bottom">※신제품 기념 20% 할인</p>
+                            <div class="banner_control">
+                                <button type="button" class="banner_btn banner_prev" aria-label="이전 배너">
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="banner_btn banner_next" aria-label="다음 배너">
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                                <div class="bullet_all" role="tablist" aria-label="배너 페이지네이션">
+                                    <button type="button" class="bullet is_active" aria-label="1번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="2번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="3번 배너"></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="banner_box banner_box02">
+                            <div class="banner_media">
+                                <img src="img/상단배너02.png" alt="시즌 피자 프로모션 배너 2">
+                            </div>
+                            <div class="banner_text">
+                                <p class="txt_top">피자헛이 쏜다!</p>
+                                <p class="txt_middle">오늘 4만원 이상 주문시<br>50% 할인 쿠폰 증정</p>
+                            </div>
+                            <div class="banner_bottom">
+                                <p class="txt_bottom">※이벤트 일부 매장 진행</p>
+                                <p class="txt_bottom2">※주문 완료 후 다음날 쿠폰 발급</p>
+                            </div>
+                            <div class="banner_control">
+                                <button type="button" class="banner_btn banner_prev" aria-label="이전 배너">
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="banner_btn banner_next" aria-label="다음 배너">
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                                <div class="bullet_all" role="tablist" aria-label="배너 페이지네이션">
+                                    <button type="button" class="bullet is_active" aria-label="1번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="2번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="3번 배너"></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="banner_box banner_box03">
+                            <div class="banner_media">
+                                <img src="img/상단배너03.png" alt="시즌 피자 프로모션 배너 3">
+                            </div>
+                            <div class="banner_text">
+                                <p class="txt_top">모든 피자, 더 많은 치즈</p>
+                                <p class="txt_middle">더욱 더 맛있는 피자를 즐겨보세요!</p>
+                            </div>
+                            <div class="banner_control">
+                                <button type="button" class="banner_btn banner_prev" aria-label="이전 배너">
+                                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" class="banner_btn banner_next" aria-label="다음 배너">
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                                <div class="bullet_all" role="tablist" aria-label="배너 페이지네이션">
+                                    <button type="button" class="bullet is_active" aria-label="1번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="2번 배너"></button>
+                                    <button type="button" class="bullet" aria-label="3번 배너"></button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="info" aria-label="할인 정보 배너">
+                <div class="info_all">
+                    <div class="box box_left">
+                        <div class="input_btn">포장</div>
+                        <p class="info_text">
+                            <span class="price_num">10,000</span><span class="price_won">원</span>
+                            <span class="price_desc">할인</span>
+                        </p>
+                    </div>
+                    <div class="box box_right">
+                        <div class="input_btn">배달</div>
+                        <p class="info_text">
+                            <span class="price_num">8,000</span><span class="price_won">원</span>
+                            <span class="price_desc">할인</span>
+                        </p>
+                    </div>
+                </div>
+                <p class="info_notice">※L 사이즈 피자 기준입니다.</p>
+            </section>
+            <section class="input" aria-label="주문 서비스">
+                <div class="service_all">
+                    <a href="#" class="delivery">
+                        <div class="delivery_img" aria-hidden="true"></div>
+                        <p>배달 주문</p>
+                    </a>
+                    <a href="#" class="takeout">
+                        <div class="takeout_img" aria-hidden="true"></div>
+                        <p>방문 포장</p>
+                    </a>
+                    <a href="#" class="address">
+                        <div class="address_img" aria-hidden="true"></div>
+                        <p>주소 입력</p>
+                    </a>
+                </div>
+            </section>
+            <section class="menu" aria-label="베스트 메뉴">
+                <div class="menu_all">
+                    <div class="text">
+                        <div class="top">
+                            <h2>Best Menu</h2>
+                            <p>피자헛의 인기 메뉴들을 만나보세요</p>
+                        </div>
+                    </div>
+                    <div class="img_all">
+                        <div class="images">
+                            <div class="pizza">
+                                <a href="#" class="pizza_link">
+                                    <img src="img/메뉴01.png" alt="리얼 BBQ불고기 피자">
+                                </a>
+                                <div class="info_all">
+                                    <div class="info_txt">
+                                        <div class="name">
+                                            <h3>리얼 BBQ불고기</h3>
+                                        </div>
+                                        <div class="price">
+                                            <div class="large">
+                                                <div class="total">
+                                                    <span class="icon">L</span>
+                                                    <p>29,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>21,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>19,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="medium">
+                                                <div class="total">
+                                                    <span class="icon">M</span>
+                                                    <p>23,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>18,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>16,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#" class="bt">인기메뉴</a>
+                                            <a href="#" class="bt">회원할인</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pizza">
+                                <a href="#" class="pizza_link">
+                                    <img src="img/메뉴02.png" alt="베이컨 포테이토 피자">
+                                </a>
+                                <div class="info_all">
+                                    <div class="info_txt">
+                                        <div class="name">
+                                            <h3>베이컨 포테이토</h3>
+                                        </div>
+                                        <div class="price">
+                                            <div class="large">
+                                                <div class="total">
+                                                    <span class="icon">L</span>
+                                                    <p>27,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>19,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>17,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="medium">
+                                                <div class="total">
+                                                    <span class="icon">M</span>
+                                                    <p>21,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>16,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>14,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#" class="bt">인기메뉴</a>
+                                            <a href="#" class="bt">회원할인</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pizza">
+                                <a href="#" class="pizza_link">
+                                    <img src="img/메뉴03.png" alt="오리지널 페퍼로니 피자">
+                                </a>
+                                <div class="info_all">
+                                    <div class="info_txt">
+                                        <div class="name">
+                                            <h3>오리지널 페퍼로니</h3>
+                                        </div>
+                                        <div class="price">
+                                            <div class="large">
+                                                <div class="total">
+                                                    <span class="icon">L</span>
+                                                    <p>25,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>17,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>15,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="medium">
+                                                <div class="total">
+                                                    <span class="icon">M</span>
+                                                    <p>19,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>17,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>13,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#" class="bt">인기메뉴</a>
+                                            <a href="#" class="bt">회원할인</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pizza">
+                                <a href="#" class="pizza_link">
+                                    <img src="img/메뉴04.png" alt="슈퍼슈프림 피자">
+                                </a>
+                                <div class="info_all">
+                                    <div class="info_txt">
+                                        <div class="name">
+                                            <h3>슈퍼슈프림</h3>
+                                        </div>
+                                        <div class="price">
+                                            <div class="large">
+                                                <div class="total">
+                                                    <span class="icon">L</span>
+                                                    <p>29,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>21,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>19,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="medium">
+                                                <div class="total">
+                                                    <span class="icon">M</span>
+                                                    <p>23,900원~</p>
+                                                </div>
+                                                <div class="sev">
+                                                    <div class="deli">
+                                                        <p>배달</p>
+                                                        <p>18,900원~</p>
+                                                    </div>
+                                                    <div class="take">
+                                                        <p>포장</p>
+                                                        <p>16,900원~</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="button">
+                                            <a href="#" class="bt">인기메뉴</a>
+                                            <a href="#" class="bt">회원할인</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_all">
+                        <a href="#" class="txt_con">메뉴 전체 보기</a>
+                    </div>
+                </div>
+            </section>
+            <section class="event" aria-label="이벤트 및 창업 안내">
+                <div class="event_all">
+                    <div class="event_sub">
+                        <article class="promotion">
+                            <div class="txt_all">
+                                <div class="txt">
+                                    <h2>Event &amp; Promotion</h2>
+                                    <p>지금 다양한 할인과 혜택을 만나보세요!</p>
+                                </div>
+                            </div>
+                            <a href="#" class="img" aria-label="피자헛 이벤트 페이지로 이동">
+                                <img src="img/이벤트배너.png" alt="EVENT &amp; PROMOTION 피자헛 이벤트">
+                                <div class="card_txt">
+                                    <p>EVENT &amp; PROMOTION</p>
+                                    <p>피자헛 이벤트</p>
+                                </div>
+                                <div class="btn_all">
+                                    <span>할인 혜택 보러가기</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="promotion">
+                            <div class="txt_all">
+                                <div class="txt">
+                                    <h2>Franchise</h2>
+                                    <p>피자헛 사업설명을 만나보세요.</p>
+                                </div>
+                            </div>
+                            <a href="#" class="img" aria-label="피자헛 창업 안내 페이지로 이동">
+                                <img src="img/창업안내배너.png" alt="FRANCHISE 가맹점 모집">
+                                <div class="card_txt">
+                                    <p>FRANCHISE</p>
+                                    <p>가맹점 모집</p>
+                                </div>
+                                <div class="btn_all">
+                                    <span>창업안내 둘러보기</span>
+                                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer_all">
+                <div class="footer_left">
+                    <a href="#" class="footer_logo" aria-label="피자헛 메인으로 이동">
+                        <img src="img/피자헛로고.png" alt="피자헛">
+                    </a>
+                </div>
+                <div class="footer_center">
+                    <div class="text1">
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">단체주문</a></li>
+                            <li><a href="#">창업안내</a></li>
+                        </ul>
+                    </div>
+                    <div class="text2">
+                        <p>대표번호 1588-5588(운영시간 10:30 ~ 22:00)</p>
+                        <p>서울시 영등포구 국회대로 74길 4, 9~11층
+                            <br>사업자등록번호 120-81-63948 통신판매업신고번호 제2018-서울영등포-1220호
+                            <br>한국피자헛유한회사 대표이사 : 조윤상 개인정보 보호책임자 : 손정완
+                        </p>
+                        <p>Copyright &copy; BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <div class="app">
+                        <p>피자헛 APP에서 바로 주문!</p>
+                        <div class="app_all">
+                            <a href="#" class="apple" aria-label="애플 앱 다운로드">
+                                <img src="./img/풋터배너01.png" alt="App Store">
+                            </a>
+                            <a href="#" class="android" aria-label="안드로이드 앱 다운로드">
+                                <img src="./img/풋터배너02.png" alt="Google Play">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sns">
+                        <div class="logo">
+                            <a href="#" class="youtube" aria-label="유튜브 바로가기"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="facebook" aria-label="페이스북 바로가기"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="twitter" aria-label="트위터 바로가기"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="insta" aria-label="인스타그램 바로가기"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div> <!-- //.wrap -->
+</body>
+
+</html>

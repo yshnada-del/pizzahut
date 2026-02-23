@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Pizzahut">
+    <meta name="keywords" content="pizza, chicken, pasta">
+    <meta name="author" content="Seunghyun">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzahut</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/common_media.css">
+    <link rel="stylesheet" href="css/login_style.css">
+    <!-- 나의 media css -->
+    <script src="https://kit.fontawesome.com/feb8d1a54e.js" crossorigin="anonymous"></script>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="inner">
+                <div class="left_info">
+                    <h1><a href="#"><img src="img/피자헛로고.png" alt="피자헛"></a></h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#">메뉴</a></li>
+                            <li><a href="#">이벤트&제휴</a></li>
+                            <li><a href="#">매장찾기</a></li>
+                            <li><a href="#" class="more_btn">더보기<i class="fa-solid fa-angle-down"></i></a>
+                                <div class="lnb">
+                                    <div class="lnb_sub">
+                                        <div class="lnb_box">
+                                            <h3>메뉴</h3>
+                                            <ul>
+                                                <li><a href="#">피자</a></li>
+                                                <li><a href="#">치킨</a></li>
+                                                <li><a href="#">파스타&사이드</a></li>
+                                                <li><a href="#">음료&기타</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>이벤트&제휴</h3>
+                                            <ul>
+                                                <li><a href="#">이벤트</a></li>
+                                                <li><a href="#">제휴</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>쿠폰&멤버십</h3>
+                                            <ul>
+                                                <li><a href="#">모바일상품권</a></li>
+                                                <li><a href="#">모바일상품권 구매</a></li>
+                                                <li><a href="#">피자헛 멤버십</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>단체주문</h3>
+                                            <ul>
+                                                <li><a href="#">단체배달 & 포장</a></li>
+                                                <li><a href="#">지류 상품권</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>매장찾기</h3>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>브랜드</h3>
+                                            <ul>
+                                                <li><a href="#">브랜드</a></li>
+                                                <li><a href="#">인재채용</a></li>
+                                                <li><a href="#">창업안내</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>피자헛 소식</h3>
+                                            <ul>
+                                                <li><a href="#">보도자료</a></li>
+                                                <li><a href="#">공지사항</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                        <div class="lnb_box">
+                                            <h3>고객센터</h3>
+                                            <ul>
+                                                <li><a href="#">자주묻는질문</a></li>
+                                                <li><a href="#">1 : 1 문의</a></li>
+                                            </ul>
+                                        </div><!-- //.lnb_box -->
+                                    </div><!-- //.lnb_sub -->
+                                </div><!-- //.lnb -->
+                            </li>
+                        </ul>
+                    </nav>
+                </div><!-- //.left_info -->
+                <div class="right_info">
+                    <div class="search">
+                        <form>
+                            <fieldset>
+                                <input type="text" class="srh_input" placeholder="검색어를 입력하세요">
+                                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </fieldset>
+                        </form>
+                    </div><!-- //.search -->
+                    <div class="login icon_btn">
+                        <a href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    </div><!-- //.login -->
+                    <div class="join icon_btn">
+                        <a href="#"><i class="fa-solid fa-user-plus"></i></a>
+                    </div><!-- //.join -->
+                    <div class="cart icon_btn">
+                        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </div><!-- //.cart -->
+                </div><!-- //.right_info -->
+            </div><!-- //.inner -->
+        </header>
+        <main>
+            <div class="login">
+                <div class="login_all">
+                    <div class="login_top">
+                        <div class="top_all">
+                            <div class="top">
+                                <div class="txt">로그인</div>
+                                <div class="box_all">
+                                    <button type="button" class="box active">회원 로그인</button>
+                                    <button type="button" class="box inactive">비회원 주문</button>
+                                </div>
+                            </div>
+                            <div class="idpw">
+                                <input type="text" class="id" placeholder="이메일 / 핸드폰 번호">
+                                <input type="password" class="pw" placeholder="비밀번호">
+                            </div>
+                        </div>
+                        <div class="sf_all">
+                            <div class="save_all">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="save_id" checked>
+                                    <label for="save_id">아이디 저장</label>
+                                </div>
+                            </div>
+                            <div class="find_all">
+                                <a href="#" class="find_id">아이디 찾기</a>
+                                <div class="line"></div>
+                                <a href="#" class="find_pw">비밀번호 찾기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login_bottom">
+                        <a href="#" class="login_box">로그인</a>
+                        <a href="#" class="join_box">회원가입</a>
+                    </div>
+                </div>
+                <div class="easy">
+                    <div class="txt">간편 로그인</div>
+                    <div class="easy_all">
+                        <a href="#" class="kakao">
+                            <div class="sns"><img src="img/카카오.png" alt="카카오 로그인"></div>
+                        </a>
+                        <a href="#" class="naver">
+                            <div class="sns"><img src="img/네이버.png" alt="네이버 로그인"></div>
+                        </a>
+                        <a href="#" class="google">
+                            <div class="sns"><img src="img/구글.png" alt="구글 로그인"></div>
+                        </a>
+                        <a href="#" class="apple">
+                            <div class="sns"><img src="img/애플.png" alt="애플 로그인"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer_all">
+                <div class="footer_left">
+                    <a href="#" class="footer_logo" aria-label="피자헛 메인으로 이동">
+                        <img src="img/피자헛로고.png" alt="피자헛">
+                    </a>
+                </div>
+                <div class="footer_center">
+                    <div class="text1">
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">단체주문</a></li>
+                            <li><a href="#">창업안내</a></li>
+                        </ul>
+                    </div>
+                    <div class="text2">
+                        <p>대표번호 1588-5588(운영시간 10:30 ~ 22:00)</p>
+                        <p>서울시 영등포구 국회대로 74길 4, 9~11층
+                            <br>사업자등록번호 120-81-63948 통신판매업신고번호 제2018-서울영등포-1220호
+                            <br>한국피자헛유한회사 대표이사 : 조윤상 개인정보 보호책임자 : 손정완
+                        </p>
+                        <p>Copyright &copy; BY PIZZA HUT KOREA LTD. ALL RIGHT RESERVED</p>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <div class="app">
+                        <p>피자헛 APP에서 바로 주문!</p>
+                        <div class="app_all">
+                            <a href="#" class="apple" aria-label="애플 앱 다운로드">
+                                <img src="./img/풋터배너01.png" alt="App Store">
+                            </a>
+                            <a href="#" class="android" aria-label="안드로이드 앱 다운로드">
+                                <img src="./img/풋터배너02.png" alt="Google Play">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sns">
+                        <div class="logo">
+                            <a href="#" class="youtube" aria-label="유튜브 바로가기"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="facebook" aria-label="페이스북 바로가기"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="twitter" aria-label="트위터 바로가기"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="insta" aria-label="인스타그램 바로가기"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div><!-- //.wrap -->
+</body>
+
+</html>
