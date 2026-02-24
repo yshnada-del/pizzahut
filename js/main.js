@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-     const bannerTrack = document.querySelector('.banner_track');
+    const bannerTrack = document.querySelector('.banner_track');
     const slides = document.querySelectorAll('.banner_box');
-    const prevButtons = document.querySelectorAll('.banner_prev');
-    const nextButtons = document.querySelectorAll('.banner_next');
-    const allBulletSets = document.querySelectorAll('.bullet_all');
+    const bannerControl = document.querySelector('.banner_control');
+    const prevButton = document.querySelector('.banner_prev');
+    const nextButton = document.querySelector('.banner_next');
+    const bullets = document.querySelectorAll('.bullet_all .bullet');
     if (bannerTrack && slides.length > 0) {
         let currentIndex = 0;
 
@@ -22,13 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 slide.classList.toggle('is_active', idx === currentIndex);
             });
 
-            allBulletSets.forEach((set) => {
-                const bullets = set.querySelectorAll('.bullet');
-                bullets.forEach((bullet, idx) => {
-                    const isActive = idx === currentIndex;
-                    bullet.classList.toggle('is_active', isActive);
-                    bullet.setAttribute('aria-current', isActive ? 'true' : 'false');
-                });
+            // Keep one control block and attach it to the active slide.
+            if (bannerControl) {
+                slides[currentIndex].appendChild(bannerControl);
+            }
+
+            bullets.forEach((bullet, idx) => {
+                const isActive = idx === currentIndex;
+                bullet.classList.toggle('is_active', isActive);
+                bullet.setAttribute('aria-current', isActive ? 'true' : 'false');
             });
         };
 
@@ -44,24 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
             renderBanner();
         };
 
-        prevButtons.forEach((btn) => {
-            btn.addEventListener('click', () => {
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
                 goTo(currentIndex - 1);
             });
-        });
+        }
 
-        nextButtons.forEach((btn) => {
-            btn.addEventListener('click', () => {
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
                 goTo(currentIndex + 1);
             });
-        });
+        }
 
-        allBulletSets.forEach((set) => {
-            const bullets = set.querySelectorAll('.bullet');
-            bullets.forEach((bullet, idx) => {
-                bullet.addEventListener('click', () => {
-                    goTo(idx);
-                });
+        bullets.forEach((bullet, idx) => {
+            bullet.addEventListener('click', () => {
+                goTo(idx);
             });
         });
 
@@ -118,6 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         menuTrack.addEventListener('pointerdown', (event) => {
             if (event.button !== 0) {
+                return;
+            }
+
+            const interactiveTarget = event.target.closest('a, button, input, textarea, select, label');
+            if (interactiveTarget) {
+                shouldBlockClick = false;
                 return;
             }
 
