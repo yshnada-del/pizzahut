@@ -39,12 +39,15 @@ a {
 .top_banner {
   width: 100%;
   height: 50px;
-  background: #c83335;
+  background: #fff;
   text-align: center;
   line-height: 50px;
 }
 
 .top_banner a {
+  display: block;
+  width: 100%;
+  background: #c83335;
   font-size: 19px;
   font-weight: 600;
   color: #fff;
@@ -55,10 +58,18 @@ a {
 header {
   background: #fff;
   width: 100%;
-  border-bottom: 1px solid #d5d5d5;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 header .inner {
@@ -190,8 +201,9 @@ header .left_info nav ul li {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
   width: 100%;
+  transform: translateX(-50%);
   background: #fff;
   border-top: 1px solid #d5d5d5;
   border-bottom: 1px solid #d5d5d5;

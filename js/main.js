@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentTranslateX = 0;
         let maxDragX = 0;
         let shouldBlockClick = false;
+        let isInitialPositionSet = false;
 
         const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -90,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewportWidth = menuViewport.clientWidth;
             const trackWidth = menuTrack.scrollWidth;
             maxDragX = Math.max(0, trackWidth - viewportWidth);
+            if (!isInitialPositionSet && maxDragX > 0) {
+                // Start from the middle so both edges are slightly clipped.
+                currentTranslateX = -maxDragX / 2;
+                isInitialPositionSet = true;
+            }
             currentTranslateX = clamp(currentTranslateX, -maxDragX, 0);
             applyTranslate();
         };
@@ -121,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const interactiveTarget = event.target.closest('a, button, input, textarea, select, label');
+            const interactiveTarget = event.target.closest('button, input, textarea, select, label');
             if (interactiveTarget) {
                 shouldBlockClick = false;
                 return;
