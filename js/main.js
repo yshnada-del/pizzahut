@@ -91,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewportWidth = menuViewport.clientWidth;
             const trackWidth = menuTrack.scrollWidth;
             maxDragX = Math.max(0, trackWidth - viewportWidth);
-            if (!isInitialPositionSet && maxDragX > 0) {
-                // Start from the middle so both edges are slightly clipped.
-                currentTranslateX = -maxDragX / 2;
+            if (!isInitialPositionSet) {
+                // Start from the first menu item.
+                currentTranslateX = 0;
                 isInitialPositionSet = true;
             }
             currentTranslateX = clamp(currentTranslateX, -maxDragX, 0);
