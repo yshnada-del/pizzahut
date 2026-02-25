@@ -71,9 +71,18 @@ main {
 }
 
 .banner_box01 .banner_text {
-  top: 191px;
-  left: 178px;
+  top: 202px;
+  right: 169px;
   text-align: left;
+}
+
+.banner_box01::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .banner_box01 .txt_top {
@@ -312,6 +321,8 @@ main {
 .input .address .txt_all {
   width: 261px;
   height: 124px;
+  align-items: center;
+  text-align: center;
 }
 
 .input .txt_all {
@@ -583,7 +594,7 @@ main {
   font-weight: 300;
   line-height: 1.4;
   letter-spacing: -0.025em;
-  color: #a1a1a1;
+  color: #111111;
 }
 
 .input_two .franchise_image,
