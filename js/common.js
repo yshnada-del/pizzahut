@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (headerLogoLink) {
         headerLogoLink.addEventListener('click', (e) => {
+            if (headerLogoLink.getAttribute('href') !== '#') {
+                return;
+            }
+
             e.preventDefault();
             window.scrollTo({
                 top: 0,

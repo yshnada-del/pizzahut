@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bullets = document.querySelectorAll(".bullet_all .bullet");
   if (bannerTrack && slides.length > 0) {
     let currentIndex = 0;
+    const autoSlideDelay = 3000;
+    let autoSlideTimer = null;
 
     const getStepSize = () => {
       const firstSlide = slides[0];
@@ -46,59 +48,152 @@ document.addEventListener("DOMContentLoaded", () => {
       renderBanner();
     };
 
+    const stopAutoSlide = () => {
+      if (autoSlideTimer) {
+        window.clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    };
+
+    const startAutoSlide = () => {
+      stopAutoSlide();
+      autoSlideTimer = window.setInterval(() => {
+        goTo(currentIndex + 1);
+      }, autoSlideDelay);
+    };
+
+    const restartAutoSlide = () => {
+      startAutoSlide();
+    };
+
     if (prevButton) {
       prevButton.addEventListener("click", () => {
         goTo(currentIndex - 1);
+        restartAutoSlide();
       });
     }
 
     if (nextButton) {
       nextButton.addEventListener("click", () => {
         goTo(currentIndex + 1);
+        restartAutoSlide();
       });
     }
 
     bullets.forEach((bullet, idx) => {
       bullet.addEventListener("click", () => {
         goTo(idx);
+        restartAutoSlide();
       });
     });
 
     window.addEventListener("resize", renderBanner);
     renderBanner();
+    startAutoSlide();
   }
 
   const menuViewport = document.querySelector(".menu .img_all");
   const menuTrack = document.querySelector(".menu .images");
 
   if (menuViewport && menuTrack) {
+    const originalItems = Array.from(menuTrack.children);
+    let segmentWidth = 0;
+    let currentTranslateX = 0;
+    let lastFrameTime = 0;
+    let isPaused = false;
     let isPointerDown = false;
     let startX = 0;
     let startTranslateX = 0;
-    let currentTranslateX = 0;
-    let maxDragX = 0;
     let shouldBlockClick = false;
-    let isInitialPositionSet = false;
+    const marqueeSpeed = 70;
 
-    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    originalItems.forEach((item) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.classList.add("menu_clone");
+      clone.querySelectorAll("a, button").forEach((element) => {
+        element.setAttribute("tabindex", "-1");
+      });
+      menuTrack.appendChild(clone);
+    });
 
-    const applyTranslate = () => {
+    const normalizeTranslate = (value) => {
+      if (!segmentWidth) {
+        return 0;
+      }
+
+      let normalized = value % segmentWidth;
+      if (normalized > 0) {
+        normalized -= segmentWidth;
+      }
+      return normalized;
+    };
+
+    const applyMenuTranslate = () => {
       menuTrack.style.transform = `translateX(${currentTranslateX}px)`;
     };
 
-    const updateDragBounds = () => {
-      const viewportWidth = menuViewport.clientWidth;
-      const trackWidth = menuTrack.scrollWidth;
-      maxDragX = Math.max(0, trackWidth - viewportWidth);
-      if (!isInitialPositionSet) {
-        currentTranslateX = 0;
-        isInitialPositionSet = true;
-      }
-      currentTranslateX = clamp(currentTranslateX, -maxDragX, 0);
-      applyTranslate();
+    const updateMenuMarqueeSize = () => {
+      const trackStyle = window.getComputedStyle(menuTrack);
+      const gap = Number.parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+      segmentWidth = originalItems.reduce(
+        (total, item) => total + item.getBoundingClientRect().width + gap,
+        0,
+      );
+      currentTranslateX = normalizeTranslate(currentTranslateX);
+      applyMenuTranslate();
     };
 
-    const onPointerMove = (event) => {
+    const animateMenuMarquee = (time) => {
+      if (!lastFrameTime) {
+        lastFrameTime = time;
+      }
+
+      const deltaTime = time - lastFrameTime;
+      lastFrameTime = time;
+
+      if (!isPaused && !isPointerDown) {
+        currentTranslateX = normalizeTranslate(
+          currentTranslateX - (marqueeSpeed * deltaTime) / 1000,
+        );
+        applyMenuTranslate();
+      }
+
+      window.requestAnimationFrame(animateMenuMarquee);
+    };
+
+    const onPointerUp = () => {
+      if (!isPointerDown) {
+        return;
+      }
+
+      isPointerDown = false;
+      menuTrack.classList.remove("is_dragging");
+    };
+
+    menuViewport.addEventListener("pointerenter", () => {
+      isPaused = true;
+    });
+
+    menuViewport.addEventListener("pointerleave", () => {
+      isPaused = false;
+    });
+
+    menuTrack.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0) {
+        return;
+      }
+
+      isPointerDown = true;
+      isPaused = true;
+      shouldBlockClick = false;
+      startX = event.clientX;
+      startTranslateX = currentTranslateX;
+      menuTrack.classList.add("is_dragging");
+      menuTrack.setPointerCapture(event.pointerId);
+    });
+
+    menuTrack.addEventListener("pointermove", (event) => {
       if (!isPointerDown) {
         return;
       }
@@ -108,40 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
         shouldBlockClick = true;
       }
 
-      currentTranslateX = clamp(startTranslateX + deltaX, -maxDragX, 0);
-      applyTranslate();
-    };
-
-    const onPointerUp = () => {
-      if (!isPointerDown) {
-        return;
-      }
-      isPointerDown = false;
-      menuTrack.classList.remove("is_dragging");
-    };
-
-    menuTrack.addEventListener("pointerdown", (event) => {
-      if (event.button !== 0) {
-        return;
-      }
-
-      const interactiveTarget = event.target.closest(
-        "button, input, textarea, select, label",
-      );
-      if (interactiveTarget) {
-        shouldBlockClick = false;
-        return;
-      }
-
-      isPointerDown = true;
-      shouldBlockClick = false;
-      startX = event.clientX;
-      startTranslateX = currentTranslateX;
-      menuTrack.classList.add("is_dragging");
-      menuTrack.setPointerCapture(event.pointerId);
+      currentTranslateX = normalizeTranslate(startTranslateX + deltaX);
+      applyMenuTranslate();
     });
 
-    menuTrack.addEventListener("pointermove", onPointerMove);
     menuTrack.addEventListener("pointerup", onPointerUp);
     menuTrack.addEventListener("pointercancel", onPointerUp);
     menuTrack.addEventListener("lostpointercapture", onPointerUp);
@@ -152,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!shouldBlockClick) {
           return;
         }
+
         event.preventDefault();
         event.stopPropagation();
         shouldBlockClick = false;
@@ -159,7 +225,8 @@ document.addEventListener("DOMContentLoaded", () => {
       true,
     );
 
-    window.addEventListener("resize", updateDragBounds);
-    updateDragBounds();
+    window.addEventListener("resize", updateMenuMarqueeSize);
+    updateMenuMarqueeSize();
+    window.requestAnimationFrame(animateMenuMarquee);
   }
 });
