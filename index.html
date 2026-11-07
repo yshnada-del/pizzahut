@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -7,38 +7,22 @@
     <meta name="author" content="Seunghyun" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pizzahut</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="icon" href="img/figma/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/common_media.css" />
     <link rel="stylesheet" href="css/main_style.css" />
     <!-- 나의 media css -->
-    <script
-      src="https://kit.fontawesome.com/feb8d1a54e.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/common.js"></script>
     <script src="js/main.js"></script>
   </head>
 
-  <body>
+  <body class="home">
     <div class="wrap">
-      <div class="top_banner">
-        <a href="#"
-          >지금 회원가입 및 로그인시 1만원 할인에 추가 혜택을 드려요!</a
-        >
-      </div>
-      <!-- //.top_banner -->
       <header>
         <div class="inner">
           <div class="left_info">
             <h1>
-              <a href="index.html"><img src="img/pizzahutlogo.png" alt="피자헛" /></a>
+              <a href="index.html"><img src="img/figma/logo.png" alt="피자헛" /></a>
             </h1>
             <nav>
               <ul>
@@ -46,10 +30,49 @@
                 <li><a href="#">이벤트&제휴</a></li>
                 <li><a href="#">매장찾기</a></li>
                 <li>
-                  <a href="#" class="more_btn"
-                    >더보기<i class="fa-solid fa-angle-down"></i
+                  <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
+                    >더보기<span class="nav-chevron"><img src="img/figma/live-area.svg" alt="" /></span
                   ></a>
-                  <div class="lnb">
+
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- //.left_info -->
+          <div class="right_info">
+            <div class="search">
+              <form>
+                <fieldset>
+                  <input
+                    type="text"
+                    class="srh_input"
+                    placeholder="검색어를 입력하세요"
+                  />
+                  <button type="button">
+                    <img src="img/figma/live-area1.svg" alt="검색" />
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <!-- //.search -->
+            <div class="login icon_btn">
+              <a href="login.html"><img src="img/figma/log-in.svg" alt="로그인" /></a>
+            </div>
+            <!-- //.login -->
+            <div class="join icon_btn">
+              <a href="login.html"><img src="img/figma/user-plus.svg" alt="회원가입" /></a>
+            </div>
+            <!-- //.join -->
+            <div class="cart icon_btn">
+              <a href="login.html"><img src="img/figma/shopping-cart.svg" alt="장바구니" /></a>
+            </div>
+            <!-- //.cart -->
+          </div>
+          <!-- //.right_info -->
+        </div>
+        <!-- //.inner -->
+      </header>
+      <div class="lnb" id="main-nav" role="navigation" aria-label="전체 메뉴">
                     <div class="lnb_sub">
                       <div class="lnb_box">
                         <h3>메뉴</h3>
@@ -119,322 +142,142 @@
                     <!-- //.lnb_sub -->
                   </div>
                   <!-- //.lnb -->
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <!-- //.left_info -->
-          <div class="right_info">
-            <div class="search">
-              <form>
-                <fieldset>
-                  <input
-                    type="text"
-                    class="srh_input"
-                    placeholder="검색어를 입력하세요"
-                  />
-                  <button type="button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </button>
-                </fieldset>
-              </form>
-            </div>
-            <!-- //.search -->
-            <div class="login icon_btn">
-              <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-            </div>
-            <!-- //.login -->
-            <div class="join icon_btn">
-              <a href="#"><i class="fa-solid fa-user-plus"></i></a>
-            </div>
-            <!-- //.join -->
-            <div class="cart icon_btn">
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <!-- //.cart -->
-          </div>
-          <!-- //.right_info -->
-        </div>
-        <!-- //.inner -->
-      </header>
-      <main>
-        <section class="banner" aria-label="메인 배너">
-          <div class="banner_all">
-            <div class="banner_track">
-              <article class="banner_box banner_box01 is_active">
-                <div class="banner_media">
-                  <img
-                    src="img/topbanner04.png"
-                    alt="신메뉴 마르게리타 피자 배너"
-                  />
-                </div>
-                <div class="banner_text">
-                  <p class="txt_top">봄내음이 느껴지는 싱그러움</p>
-                  <p class="txt_top">마르게리타 피자의 재해석</p>
-                  <p class="txt_middle">페퍼론치노 마르게리타</p>
-                  <p class="txt_bottom">※ 신제품 기념 20% 할인</p>
-                </div>
-              </article>
-
-              <article class="banner_box banner_box02">
-                <div class="banner_media">
-                  <img
-                    src="img/topbanner02.png"
-                    alt="피자헛이 쏜다 할인 배너"
-                  />
-                </div>
-                <div class="banner_text">
-                  <p class="txt_top">
-                    <span class="txt_top_bold">피자헛</span
-                    ><span class="txt_top_light">이 쏜다!</span>
-                  </p>
-                  <p class="txt_middle">
-                    <span class="txt_middle_light">4만원 이상 주문시 </span
-                    ><span class="txt_middle_medium">50% 할인</span
-                    ><span class="txt_middle_light"> 쿠폰 증정</span>
-                  </p>
-                  <div class="banner_bottom">
-                    <p class="txt_bottom2">※ 주문 완료 후 다음날 쿠폰 발급</p>
-                    <p class="txt_bottom">※ 이벤트 일부 매장 진행</p>
+      <main id="main-content">
+        <section class="hero" aria-label="추천 메뉴와 빠른 주문">
+          <div class="hero-banner">
+            <div class="banner_all">
+              <div class="banner_track">
+                <article class="banner_box is_active">
+                  <img class="banner-photo" src="img/figma/banner-box.png" alt="페퍼론치노 마르게리타 피자" />
+                  <div class="banner_text first-banner-copy">
+                    <h2>봄내음이 느껴지는 싱그러움<br />마르게리타 피자의 재해석</h2>
+                    <p class="txt_middle">페퍼론치노 마르게리타</p>
+                    <p class="txt_bottom">※신제품 기념 20%할인</p>
                   </div>
-                </div>
-              </article>
-
-              <article class="banner_box banner_box03">
-                <div class="banner_media">
-                  <img
-                    src="img/topbanner03.png"
-                    alt="더욱 더 다양한 피자 배너"
-                  />
-                </div>
-                <div class="banner_text">
-                  <p class="txt_top">모든 피자, 더 많은 치즈</p>
-                  <p class="txt_middle">더욱 더 맛있는 피자를 즐겨보세요!</p>
-                </div>
-              </article>
-            </div>
-            <div class="banner_control">
-              <button
-                type="button"
-                class="banner_btn banner_prev"
-                aria-label="이전 배너"
-              >
-                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-              </button>
-              <button
-                type="button"
-                class="banner_btn banner_next"
-                aria-label="다음 배너"
-              >
-                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-              </button>
-              <div class="bullet_all" role="tablist" aria-label="배너 페이지">
-                <button
-                  type="button"
-                  class="bullet is_active"
-                  aria-label="1번 배너"
-                ></button>
-                <button
-                  type="button"
-                  class="bullet"
-                  aria-label="2번 배너"
-                ></button>
-                <button
-                  type="button"
-                  class="bullet"
-                  aria-label="3번 배너"
-                ></button>
-              </div>
+                </article>
+                <article class="banner_box">
+                  <img class="banner-photo" src="img/topbanner02.png" alt="피자헛 할인 쿠폰 프로모션" />
+                  <div class="banner_text alternate">
+                    <h2>피자헛이 쏜다!</h2>
+                    <p class="txt_middle">4만원 이상 주문 시 50% 할인 쿠폰 증정</p>
+                    <p class="txt_bottom banner-notes"><span>※ 주문 완료 후 다음날 쿠폰 발급</span><span>※ 이벤트 일부 매장 진행</span></p>
+                  </div>
+                </article>
+                <article class="banner_box">
+                  <img class="banner-photo" src="img/topbanner03.png" alt="치즈가 가득한 피자" />
+                  <div class="banner_text alternate">
+                    <h2>모든 피자, 더 많은 치즈</h2>
+                    <p class="txt_middle">더욱 더 맛있는 피자를 즐겨보세요!</p>
+                  </div>
+                </article>
+              </div>            </div>
+            <div class="bullet_all" aria-label="배너 선택">
+              <button class="bullet is_active" type="button" aria-label="1번 배너" aria-current="true"></button>
+              <button class="bullet" type="button" aria-label="2번 배너" aria-current="false"></button>
+              <button class="bullet" type="button" aria-label="3번 배너" aria-current="false"></button>
             </div>
           </div>
-        </section>
-        <section class="input" aria-label="빠른 주문 입력">
-          <div class="service_all">
-            <a href="#" class="delivery">
-              <div class="txt_all">
-                <p class="title">배달 주문</p>
-                <p class="desc">
-                  <span class="light">※ </span><span class="medium">8000원</span
-                  ><span class="light"> 할인</span>
-                </p>
-              </div>
-              <div class="delivery_image" aria-hidden="true">
-                <img src="img/delivery.png" alt="배달 주문" />
-              </div>
+          <div class="quick-order">
+            <a class="order-item" href="sub01.html">
+              <div class="order-copy"><h2>배달 주문</h2><p>※ <strong>8000원</strong> 할인</p></div>
+              <img src="img/figma/delivery-image.png" width="140" height="140" alt="" />
             </a>
-            <a href="#" class="takeout">
-              <div class="txt_all">
-                <p class="title">포장 주문</p>
-                <p class="desc">
-                  <span class="light">※ </span
-                  ><span class="medium">10000원</span
-                  ><span class="light"> 할인</span>
-                </p>
-              </div>
-              <div class="takeout_image" aria-hidden="true">
-                <img src="img/takeout.png" alt="포장 주문" />
-              </div>
+            <a class="order-item" href="sub01.html">
+              <div class="order-copy"><h2>포장 주문</h2><p>※ <strong>10000원</strong> 할인</p></div>
+              <img src="img/figma/takeout-image.png" width="140" height="140" alt="" />
             </a>
-            <a href="#" class="address">
-              <div class="txt_all">
-                <p class="title">주소 입력</p>
-                <p class="desc">더 빠르게 주문해 보세요.</p>
-              </div>
-              <div class="address_image" aria-hidden="true">
-                <img src="img/address.png" alt="주소 입력" />
-              </div>
+            <a class="order-item" href="login.html">
+              <div class="order-copy"><h2>주소 입력</h2><p>더 빠르게 주문해 보세요.</p></div>
+              <img src="img/figma/address-image.png" width="140" height="140" alt="" />
             </a>
           </div>
         </section>
-        <section class="menu" aria-label="베스트 메뉴">
-          <div class="menu_all">
-            <div class="text">
-              <div class="top">
-                <h2>Best Menu</h2>
-                <p>피자헛의 인기 메뉴들을 만나보세요</p>
-              </div>
-            </div>
-            <div class="img_all">
-              <div class="images">
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best01.png" alt="리얼 BBQ 불고기" />
-                  </a>
-                  <div class="name">
-                    <p>리얼 BBQ 불고기</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best02.png" alt="베이컨 포테이토" />
-                  </a>
-                  <div class="name">
-                    <p>베이컨 포테이토</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best03.png" alt="오리지널 페퍼로니" />
-                  </a>
-                  <div class="name">
-                    <p>오리지널 페퍼로니</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best04.png" alt="슈퍼슈프림" />
-                  </a>
-                  <div class="name">
-                    <p>슈퍼슈프림</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best05.png" alt="트러플 머쉬룸 스테이크" />
-                  </a>
-                  <div class="name">
-                    <p>트러플 머쉬룸 스테이크</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best06.png" alt="스파이시 바베큐 립" />
-                  </a>
-                  <div class="name">
-                    <p>스파이시 바베큐 립</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="#" class="img">
-                    <img src="img/best07.png" alt="쉬림프 갈릭 크림" />
-                  </a>
-                  <div class="name">
-                    <p>쉬림프 갈릭 크림</p>
-                  </div>
-                </div>
-                <div class="pizza">
-                  <a href="sub02.html" class="img">
-                    <img src="img/best08.png" alt="갈릭 크림 불닭" />
-                  </a>
-                  <div class="name">
-                    <p>갈릭 크림 불닭</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="btn_all">
-              <a href="sub01.html" class="txt_con"
-                >메뉴 전체 보기
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </div>
-          </div>
-        </section>
-        <section class="input_two" aria-label="프랜차이즈 및 단체주문">
+        <section class="member-section" aria-label="창업 안내와 회원 혜택">
           <div class="special_all">
-            <a href="#" class="franchise">
-              <div class="txt_all">
-                <p class="title">FRANCHISE</p>
-                <p class="desc">가맹점 모집</p>
-              </div>
-              <div class="franchise_image" aria-hidden="true">
-                <img src="img/franchise.png" alt="프랜차이즈" />
-              </div>
+            <a class="special-item" href="#franchise-info" id="franchise-info">
+              <div><h2>FRANCHISE</h2><p>가맹점 모집</p></div>
+              <img src="img/figma/franchise-image.png" width="200" height="200" alt="피자헛 가맹점" />
             </a>
-            <a href="#" class="bigorder">
-              <div class="txt_all">
-                <p class="title">BIG ORDER</p>
-                <p class="desc">단체주문(10판 이상)을 주문해 보세요.</p>
-              </div>
-              <div class="bigorder_image" aria-hidden="true">
-                <img src="img/bigorder.png" alt="단체주문" />
-              </div>
+            <a class="special-item" href="login.html">
+              <div><h2>BIG ORDER</h2><p>단체주문을 이용해 보세요.</p></div>
+              <img src="img/figma/bigorder-image.png" width="200" height="200" alt="단체주문 피자 박스" />
             </a>
           </div>
+          <div class="member-panel">
+            <div class="member-shortcuts">
+              <a href="login.html"><img src="img/figma/image105.png" width="120" height="120" alt="" /><span>쿠폰함</span></a>
+              <a href="login.html"><img src="img/figma/image106.png" width="120" height="120" alt="" /><span>스탬프</span></a>
+              <a href="login.html"><img src="img/figma/image107.png" width="120" height="120" alt="" /><span>제휴할인</span></a>
+              <a href="login.html"><img src="img/figma/image108.png" width="120" height="120" alt="" /><span>주문내역</span></a>
+            </div>
+            <div class="member-signin">
+              <p>로그인 / 회원가입 시<br /><strong>1만원 할인</strong>에 추가 혜택을 드려요!</p>
+              <a class="signin-button" href="login.html">로그인 / 회원가입</a>
+            </div>
+          </div>
         </section>
-        <section class="event" aria-label="이벤트 및 창업 안내">
-          <div class="event_all">
-            <div class="text">
-              <div class="top">
-                <h2>EVENT &amp; PROMOTION</h2>
-                <p>다양한 할인과 혜택을 만나보세요.</p>
+        <section class="best-menu" aria-labelledby="best-menu-title">
+          <div class="best-menu-heading">
+            <div><h2 id="best-menu-title">Best Menu</h2><p>피자헛의 인기 메뉴들을 만나보세요</p></div>
+            <a class="all-menu-link" href="sub01.html">전체 메뉴 보러가기 <img src="img/figma/arrow-right.svg" alt="" /></a>
+          </div>
+          <div class="pizza-grid">
+
+            <article class="pizza-card featured">
+              <div class="weekly-tag">이주의<br />인기메뉴</div>
+              <a class="pizza-image" href="sub01.html"><img src="img/figma/img.png" width="520" height="520" alt="리얼 BBQ 불고기" /></a>
+              <div class="pizza-info">
+                <div><div class="pizza-title"><h3><a href="sub01.html">리얼 BBQ 불고기</a></h3><span class="popular-tag">인기메뉴</span></div><p class="pizza-description">달콤짭짤한 BBQ 소스에 풍성한 불고기와 신선한 채소가<br />어우러진 피자</p></div>
+                <div class="pizza-prices"><div><span class="pizza-size">L</span><span>36,900원~</span></div><div><span class="pizza-size">M</span><span>30,500원~</span></div></div>
               </div>
-            </div>
+            </article>
+
+            <article class="pizza-card">
+
+              <a class="pizza-image" href="sub01.html"><img src="img/figma/img1.png" width="320" height="320" alt="베이컨 포테이토" /></a>
+              <div class="pizza-info">
+                <div><div class="pizza-title"><h3><a href="sub01.html">베이컨 포테이토</a></h3><span class="popular-tag">인기메뉴</span></div><p class="pizza-description">고소한 감자와 짭짤한 베이컨에 부드러운 치즈가<br />어우러진 피자</p></div>
+                <div class="pizza-prices"><div><span class="pizza-size">L</span><span>36,900원~</span></div><div><span class="pizza-size">M</span><span>30,500원~</span></div></div>
+              </div>
+            </article>
+
+            <article class="pizza-card">
+
+              <a class="pizza-image" href="sub01.html"><img src="img/figma/img2.png" width="320" height="320" alt="오리지널 페페로니" /></a>
+              <div class="pizza-info">
+                <div><div class="pizza-title"><h3><a href="sub01.html">오리지널 페페로니</a></h3><span class="popular-tag">인기메뉴</span></div><p class="pizza-description">풍성한 페퍼로니와 진한 치즈의 풍미를 담은 클래식 피자</p></div>
+                <div class="pizza-prices"><div><span class="pizza-size">L</span><span>36,900원~</span></div><div><span class="pizza-size">M</span><span>30,500원~</span></div></div>
+              </div>
+            </article>
+
+            <article class="pizza-card">
+
+              <a class="pizza-image" href="sub01.html"><img src="img/figma/img3.png" width="320" height="320" alt="슈퍼슈프림" /></a>
+              <div class="pizza-info">
+                <div><div class="pizza-title"><h3><a href="sub01.html">슈퍼슈프림</a></h3><span class="popular-tag">인기메뉴</span></div><p class="pizza-description">다양한 고기와 신선한 채소가 조화를 이루는 풍성한 토핑의 피자</p></div>
+                <div class="pizza-prices"><div><span class="pizza-size">L</span><span>36,900원~</span></div><div><span class="pizza-size">M</span><span>30,500원~</span></div></div>
+              </div>
+            </article>
+
+            <article class="pizza-card">
+
+              <a class="pizza-image" href="sub01.html"><img src="img/figma/img4.png" width="320" height="320" alt="트러플 머쉬룸 스테이크" /></a>
+              <div class="pizza-info">
+                <div><div class="pizza-title"><h3><a href="sub01.html">트러플 머쉬룸 스테이크</a></h3><span class="popular-tag">인기메뉴</span></div><p class="pizza-description">향긋한 트러플과 풍미 가득한 버섯, 육즙 가득한 스테이크의 조화</p></div>
+                <div class="pizza-prices"><div><span class="pizza-size">L</span><span>36,900원~</span></div><div><span class="pizza-size">M</span><span>30,500원~</span></div></div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="event" id="events" aria-labelledby="events-title">
+          <div class="event-heading"><h2 id="events-title">EVENT &amp; PROMOTION</h2><p>다양한 할인과 혜택을 만나보세요.</p></div>
+          <div class="event_all">
             <div class="event_sub">
-              <article class="event_card">
-                <a href="#" class="img" aria-label="이벤트 카드 1">
-                  <img src="img/event01.png" alt="이벤트 이미지 1" />
-                </a>
-                <div class="name">
-                  <p>[EVENT] 평일에는 반값에 주말에는 1+1</p>
-                  <p>26.02.25~</p>
-                </div>
-              </article>
-              <article class="event_card">
-                <a href="#" class="img" aria-label="이벤트 카드 2">
-                  <img src="img/event02.png" alt="이벤트 이미지 2" />
-                </a>
-                <div class="name">
-                  <p>[EVENT] 인기 피자 일주일간 최대 40% 할인</p>
-                  <p>26.02.25~26.03.04</p>
-                </div>
-              </article>
-              <article class="event_card">
-                <a href="#" class="img" aria-label="이벤트 카드 3">
-                  <img src="img/event03.png" alt="이벤트 이미지 3" />
-                </a>
-                <div class="name">
-                  <p>[EVENT] 신메뉴 출시 기념 최대 20% 할인</p>
-                  <p>26.02.25~26.03.25</p>
-                </div>
-              </article>
+              <article class="event_card"><a class="img" href="#events"><img src="img/figma/img5.png" width="448" height="436" alt="평일 반값, 주말 1+1 피자 이벤트" /></a><div class="name"><p>[EVENT] 평일에는 반값에 주말에는 1+1</p><p>26.02.25~</p></div></article>
+              <article class="event_card"><a class="img" href="#events"><img src="img/figma/img6.png" width="448" height="436" alt="인기 피자 최대 40% 할인 이벤트" /></a><div class="name"><p>[EVENT] 인기 피자 일주일간 최대 40% 할인</p><p>26.02.25~26.03.04</p></div></article>
+              <article class="event_card"><a class="img" href="#events"><img src="img/figma/img7.png" width="448" height="436" alt="신메뉴 출시 기념 최대 20% 할인 이벤트" /></a><div class="name"><p>[EVENT] 신메뉴 출시 기념 최대 20% 할인</p><p>26.02.25~26.03.25</p></div></article>
             </div>
-            <div class="btn_all">
-              <a href="#" class="txt_con"
-                >이벤트 전체 보기
-                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-              ></a>
-            </div>
+            <a class="event-button" href="#events">이벤트 전체 보기 <img src="img/figma/arrow-right1.svg" alt="" /></a>
           </div>
         </section>
       </main>
@@ -442,16 +285,16 @@
         <div class="footer_all">
           <div class="footer_left">
             <a href="index.html" class="footer_logo" aria-label="피자헛 메인으로 이동">
-              <img src="img/pizzahutlogo.png" alt="피자헛" />
+              <img src="img/figma/logo.png" alt="피자헛" />
             </a>
           </div>
           <div class="footer_center">
             <div class="text1">
               <ul>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">단체주문</a></li>
+                <li><a href="#">이용약관</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">개인정보처리방침</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">공지사항</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">단체주문</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
                 <li><a href="#">창업안내</a></li>
               </ul>
             </div>
@@ -469,29 +312,33 @@
           <div class="footer_right">
             <div class="app">
               <p>피자헛 APP에서 바로 주문!</p>
-              <div class="app_all">
-                <a href="#" class="apple" aria-label="애플 앱 다운로드">
-                  <img src="./img/footer01.png" alt="App Store" />
+              <div class="store-badges"><a href="login.html" class="store-badge apple" aria-label="App Store">
+                  <span class="badge-part badge-base"><img src="img/figma/group.svg" alt="" /></span>
+                  <span class="badge-part apple-mark"><img src="img/figma/group1.svg" alt="" /></span>
+                  <span class="badge-part apple-name"><img src="img/figma/group2.svg" alt="" /></span>
+                  <span class="badge-part apple-caption"><img src="img/figma/group3.svg" alt="" /></span>
                 </a>
-                <a href="#" class="android" aria-label="안드로이드 앱 다운로드">
-                  <img src="./img/footer02.png" alt="Google Play" />
-                </a>
-              </div>
+<a href="login.html" class="store-badge android" aria-label="Google Play">
+                  <span class="badge-part badge-base"><img src="img/figma/app-android.svg" alt="" /></span>
+                  <span class="badge-part badge-base"><img src="img/figma/app-android1.svg" alt="" /></span>
+                  <span class="android-caption">GET IT ON</span>
+                  <span class="badge-part android-name"><img src="img/figma/vector.svg" alt="" /></span>
+                  <span class="badge-part android-mark1"><img src="img/figma/vector1.svg" alt="" /></span>
+                  <span class="badge-part android-mark2"><img src="img/figma/vector2.svg" alt="" /></span>
+                  <span class="badge-part android-mark3"><img src="img/figma/vector3.svg" alt="" /></span>
+                  <span class="badge-part android-mark4"><img src="img/figma/vector4.svg" alt="" /></span>
+                </a></div>
             </div>
             <div class="sns">
               <div class="logo">
                 <a href="#" class="youtube" aria-label="유튜브 바로가기"
-                  ><i class="fa-brands fa-youtube"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-youtube.svg" alt="" /></a>
                 <a href="#" class="facebook" aria-label="페이스북 바로가기"
-                  ><i class="fa-brands fa-facebook-f"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-youtube1.svg" alt="" /></a>
                 <a href="#" class="twitter" aria-label="트위터 바로가기"
-                  ><i class="fa-brands fa-x-twitter"></i
-                ></a>
-                <a href="#" class="insta" aria-label="인스타그램 바로가기"
-                  ><i class="fa-brands fa-instagram"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-twitter.svg" alt="" /></a>
+                <a href="#" class="insta figma-insta" aria-label="인스타그램 바로가기"
+                  ><img src="img/figma/insta.svg" alt="" /></a>
               </div>
             </div>
           </div>
