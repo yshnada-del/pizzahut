@@ -1,34 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const moreBtn = document.querySelector('.more_btn');
-    const lnb = document.querySelector('.lnb');
-    const headerLogoLink = document.querySelector('header .left_info h1 a');
-
-    if (headerLogoLink) {
-        headerLogoLink.addEventListener('click', (e) => {
-            if (headerLogoLink.getAttribute('href') !== '#') {
-                return;
-            }
-
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+  const moreButton = document.querySelector('.more_btn');
+  const menu = document.querySelector('.lnb');
+  if (!moreButton || !menu) return;
+  const setOpen = (open) => {
+    menu.classList.toggle('active', open);
+    moreButton.classList.toggle('on', open);
+    moreButton.setAttribute('aria-expanded', String(open));
+  };
+  moreButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    setOpen(!menu.classList.contains('active'));
+  });
+  document.addEventListener('click', (event) => {
+    if (!moreButton.contains(event.target) && !menu.contains(event.target)) setOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('active')) {
+      setOpen(false);
+      moreButton.focus();
     }
-
-    if (moreBtn && lnb) {
-        moreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            lnb.classList.toggle('active');
-            moreBtn.classList.toggle('on');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!moreBtn.contains(e.target) && !lnb.contains(e.target)) {
-                lnb.classList.remove('active');
-                moreBtn.classList.remove('on');
-            }
-        });
-    }
-}); //dom end
+  });
+});

@@ -22,6 +22,7 @@
     ></script>
     <script src="js/common.js"></script>
     <script src="js/sub02.js"></script>
+    <link rel="stylesheet" href="css/shared-chrome.css" />
   </head>
 
   <body>
@@ -30,7 +31,7 @@
         <div class="inner">
           <div class="left_info">
             <h1>
-              <a href="index.html"><img src="img/pizzahutlogo.png" alt="피자헛" /></a>
+              <a href="index.html"><img src="img/figma/logo.png" alt="피자헛" /></a>
             </h1>
             <nav>
               <ul>
@@ -38,10 +39,49 @@
                 <li><a href="#">이벤트&제휴</a></li>
                 <li><a href="#">매장찾기</a></li>
                 <li>
-                  <a href="#" class="more_btn"
-                    >더보기<i class="fa-solid fa-angle-down"></i
+                  <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
+                    >더보기<span class="nav-chevron"><img src="img/figma/live-area.svg" alt="" /></span
                   ></a>
-                  <div class="lnb">
+
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- //.left_info -->
+          <div class="right_info">
+            <div class="search">
+              <form>
+                <fieldset>
+                  <input
+                    type="text"
+                    class="srh_input"
+                    placeholder="검색어를 입력하세요"
+                  />
+                  <button type="button">
+                    <img src="img/figma/live-area1.svg" alt="검색" />
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+            <!-- //.search -->
+            <div class="login icon_btn">
+              <a href="login.html"><img src="img/figma/log-in.svg" alt="로그인" /></a>
+            </div>
+            <!-- //.login -->
+            <div class="join icon_btn">
+              <a href="login.html"><img src="img/figma/user-plus.svg" alt="회원가입" /></a>
+            </div>
+            <!-- //.join -->
+            <div class="cart icon_btn">
+              <a href="login.html"><img src="img/figma/shopping-cart.svg" alt="장바구니" /></a>
+            </div>
+            <!-- //.cart -->
+          </div>
+          <!-- //.right_info -->
+        </div>
+        <!-- //.inner -->
+      </header>
+      <div class="lnb" id="main-nav" role="navigation" aria-label="전체 메뉴">
                     <div class="lnb_sub">
                       <div class="lnb_box">
                         <h3>메뉴</h3>
@@ -111,44 +151,7 @@
                     <!-- //.lnb_sub -->
                   </div>
                   <!-- //.lnb -->
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <!-- //.left_info -->
-          <div class="right_info">
-            <div class="search">
-              <form>
-                <fieldset>
-                  <input
-                    type="text"
-                    class="srh_input"
-                    placeholder="검색어를 입력하세요"
-                  />
-                  <button type="button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </button>
-                </fieldset>
-              </form>
-            </div>
-            <!-- //.search -->
-            <div class="login icon_btn">
-              <a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-            </div>
-            <!-- //.login -->
-            <div class="join icon_btn">
-              <a href="#"><i class="fa-solid fa-user-plus"></i></a>
-            </div>
-            <!-- //.join -->
-            <div class="cart icon_btn">
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            </div>
-            <!-- //.cart -->
-          </div>
-          <!-- //.right_info -->
-        </div>
-        <!-- //.inner -->
-      </header>
+      
       <main>
         <section class="menu_page">
           <div class="menu_top">
@@ -650,16 +653,16 @@
         <div class="footer_all">
           <div class="footer_left">
             <a href="index.html" class="footer_logo" aria-label="피자헛 메인으로 이동">
-              <img src="img/pizzahutlogo.png" alt="피자헛" />
+              <img src="img/figma/logo.png" alt="피자헛" />
             </a>
           </div>
           <div class="footer_center">
             <div class="text1">
               <ul>
-                <li><a href="#">이용약관</a></li>
-                <li><a href="#">개인정보처리방침</a></li>
-                <li><a href="#">공지사항</a></li>
-                <li><a href="#">단체주문</a></li>
+                <li><a href="#">이용약관</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">개인정보처리방침</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">공지사항</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
+                <li><a href="#">단체주문</a><span class="footer-divider"><img src="img/figma/line5.svg" alt="" /></span></li>
                 <li><a href="#">창업안내</a></li>
               </ul>
             </div>
@@ -677,29 +680,33 @@
           <div class="footer_right">
             <div class="app">
               <p>피자헛 APP에서 바로 주문!</p>
-              <div class="app_all">
-                <a href="#" class="apple" aria-label="애플 앱 다운로드">
-                  <img src="./img/footer01.png" alt="App Store" />
+              <div class="store-badges"><a href="login.html" class="store-badge apple" aria-label="App Store">
+                  <span class="badge-part badge-base"><img src="img/figma/group.svg" alt="" /></span>
+                  <span class="badge-part apple-mark"><img src="img/figma/group1.svg" alt="" /></span>
+                  <span class="badge-part apple-name"><img src="img/figma/group2.svg" alt="" /></span>
+                  <span class="badge-part apple-caption"><img src="img/figma/group3.svg" alt="" /></span>
                 </a>
-                <a href="#" class="android" aria-label="안드로이드 앱 다운로드">
-                  <img src="./img/footer02.png" alt="Google Play" />
-                </a>
-              </div>
+<a href="login.html" class="store-badge android" aria-label="Google Play">
+                  <span class="badge-part badge-base"><img src="img/figma/app-android.svg" alt="" /></span>
+                  <span class="badge-part badge-base"><img src="img/figma/app-android1.svg" alt="" /></span>
+                  <span class="android-caption">GET IT ON</span>
+                  <span class="badge-part android-name"><img src="img/figma/vector.svg" alt="" /></span>
+                  <span class="badge-part android-mark1"><img src="img/figma/vector1.svg" alt="" /></span>
+                  <span class="badge-part android-mark2"><img src="img/figma/vector2.svg" alt="" /></span>
+                  <span class="badge-part android-mark3"><img src="img/figma/vector3.svg" alt="" /></span>
+                  <span class="badge-part android-mark4"><img src="img/figma/vector4.svg" alt="" /></span>
+                </a></div>
             </div>
             <div class="sns">
               <div class="logo">
                 <a href="#" class="youtube" aria-label="유튜브 바로가기"
-                  ><i class="fa-brands fa-youtube"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-youtube.svg" alt="" /></a>
                 <a href="#" class="facebook" aria-label="페이스북 바로가기"
-                  ><i class="fa-brands fa-facebook-f"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-youtube1.svg" alt="" /></a>
                 <a href="#" class="twitter" aria-label="트위터 바로가기"
-                  ><i class="fa-brands fa-x-twitter"></i
-                ></a>
-                <a href="#" class="insta" aria-label="인스타그램 바로가기"
-                  ><i class="fa-brands fa-instagram"></i
-                ></a>
+                  ><img src="img/figma/icon-jam-icons-outline-logos-twitter.svg" alt="" /></a>
+                <a href="#" class="insta figma-insta" aria-label="인스타그램 바로가기"
+                  ><img src="img/figma/insta.svg" alt="" /></a>
               </div>
             </div>
           </div>

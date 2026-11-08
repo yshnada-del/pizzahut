@@ -1,23 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const moreButton = document.querySelector('.more_btn');
-  const menu = document.querySelector('.lnb');
-  if (moreButton && menu) {
-    moreButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      const isOpen = menu.classList.toggle('active');
-      moreButton.classList.toggle('on', isOpen);
-      moreButton.setAttribute('aria-expanded', String(isOpen));
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && menu.classList.contains('active')) {
-        menu.classList.remove('active');
-        moreButton.classList.remove('on');
-        moreButton.setAttribute('aria-expanded', 'false');
-        moreButton.focus();
-      }
-    });
-  }
-
   const banner = document.querySelector('.hero-banner');
   const track = document.querySelector('.banner_track');
   const slides = Array.from(document.querySelectorAll('.banner_box'));
