@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -6,26 +6,24 @@
     <meta name="keywords" content="pizza, chicken, pasta" />
     <meta name="author" content="Seunghyun" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizzahut</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <title>피자헛</title>
+    <link rel="shortcut icon" href="img/figma/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/common_media.css" />
-    <link rel="stylesheet" href="css/sub02_style.css" />
-    <script
-      src="https://kit.fontawesome.com/feb8d1a54e.js"
-      crossorigin="anonymous"
-    ></script>
+
     <script src="js/common.js"></script>
-    <script src="js/sub02.js"></script>
+
     <link rel="stylesheet" href="css/shared-chrome.css" />
+      <link rel="stylesheet" href="css/redesign.css" />
+    <link rel="stylesheet" href="css/detail-extras.css" />
+    <link rel="stylesheet" href="css/detail-composition.css" />
+    <script src="js/product-details.js" defer></script>
+    <script src="js/experience.js" defer></script>
   </head>
 
-  <body>
+  <body class="menu-detail">
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
     <div class="wrap">
       <header>
         <div class="inner">
@@ -33,11 +31,11 @@
             <h1>
               <a href="index.html"><img src="img/figma/logo.png" alt="피자헛" /></a>
             </h1>
-            <nav>
+            <nav aria-label="주요 메뉴">
               <ul>
                 <li><a href="sub01.html">메뉴</a></li>
-                <li><a href="#">이벤트&제휴</a></li>
-                <li><a href="#">매장찾기</a></li>
+                <li><a href="index.html#events">이벤트 & 혜택</a></li>
+                <li><a href="#" data-location="takeout">매장찾기</a></li>
                 <li>
                   <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
                     >더보기<span class="nav-chevron"><img src="img/figma/live-area.svg" alt="" /></span
@@ -55,7 +53,7 @@
                   <input
                     type="text"
                     class="srh_input"
-                    placeholder="검색어를 입력하세요"
+                    placeholder="검색어를 입력하세요." aria-label="메뉴 검색"
                   />
                   <button type="button">
                     <img src="img/figma/live-area1.svg" alt="검색" />
@@ -65,15 +63,15 @@
             </div>
             <!-- //.search -->
             <div class="login icon_btn">
-              <a href="login.html"><img src="img/figma/log-in.svg" alt="로그인" /></a>
+              <a href="login.html">로그인</a>
             </div>
             <!-- //.login -->
-            <div class="join icon_btn">
-              <a href="login.html"><img src="img/figma/user-plus.svg" alt="회원가입" /></a>
+            <div class="mypage icon_btn">
+              <a href="login.html" aria-label="마이페이지"><img src="img/figma/user.svg" alt="" width="24" height="24" /></a>
             </div>
             <!-- //.join -->
             <div class="cart icon_btn">
-              <a href="login.html"><img src="img/figma/shopping-cart.svg" alt="장바구니" /></a>
+              <a href="#" data-cart aria-label="장바구니"><img src="img/figma/shopping-cart.svg" alt="" /><span class="cart-count">0</span></a>
             </div>
             <!-- //.cart -->
           </div>
@@ -86,10 +84,10 @@
                       <div class="lnb_box">
                         <h3>메뉴</h3>
                         <ul>
-                          <li><a href="#">피자</a></li>
-                          <li><a href="#">치킨</a></li>
-                          <li><a href="#">파스타&사이드</a></li>
-                          <li><a href="#">음료&기타</a></li>
+                          <li><a href="sub01.html">피자</a></li>
+                          <li><a href="sub01.html">치킨</a></li>
+                          <li><a href="sub01.html">파스타&사이드</a></li>
+                          <li><a href="sub01.html">음료&기타</a></li>
                         </ul>
                       </div>
                       <!-- //.lnb_box -->
@@ -151,504 +149,43 @@
                     <!-- //.lnb_sub -->
                   </div>
                   <!-- //.lnb -->
-      
-      <main>
-        <section class="menu_page">
-          <div class="menu_top">
-            <div class="info_txt">
-              <div class="menu_info">
-                <h2>메뉴 소개</h2>
-              </div>
-              <div class="menu_txt">
-                <p class="txt is_active">피자</p>
-                <span class="line"></span>
-                <p class="txt">핫딜</p>
-                <span class="line"></span>
-                <p class="txt">이주의 추천메뉴</p>
-                <span class="line"></span>
-                <p class="txt">치킨</p>
-                <span class="line"></span>
-                <p class="txt">파스타&사이드</p>
-                <span class="line"></span>
-                <p class="txt">음료&기타</p>
-              </div>
-            </div>
-            <div class="info_btn">
-              <button type="button">전체메뉴</button>
-              <button type="button">새메뉴</button>
-              <button type="button" class="is_active">인기메뉴</button>
-              <button type="button">프리미엄</button>
-              <button type="button">US 오리진<br />(오리지널, 팬, 씬)</button>
-              <button type="button">1인메뉴</button>
-              <button type="button">하프앤하프</button>
-              <button type="button">세트</button>
-            </div>
-          </div>
 
-          <div class="page">
-            <div class="page_top">
-              <div class="img_all">
-                <img src="img/menu08.png" alt="갈릭 크림 불닭 피자" />
-                <div class="txt">
-                  <span>*</span>
-                  <p>모든 사진은 이미지컷으로 실제 제품과 다를 수 있습니다.</p>
-                </div>
-              </div>
-
-              <div class="order">
-                <div class="text">
-                  <div class="top">
-                    <h2>갈릭 크림 불닭</h2>
-                    <p>
-                      직화 불닭 치킨, 진한 갈릭 크림 소스, 모짜렐라 치즈, 스모크
-                      파프리카, 파슬리로 완성한<br />
-                      프리미엄 피자
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    class="bottom"
-                    aria-label="원산지, 영양정보, 알레르기 유발성분 정보 보기"
-                  >
-                    <span>원산지</span>
-                    <span>●</span>
-                    <span>영양정보</span>
-                    <span>●</span>
-                    <span>알레르기 유발성분 정보</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                  </button>
-                </div>
-
-                <div class="size">
-                  <div class="choice">사이즈 선택</div>
-                  <div class="button">
-                    <button
-                      type="button"
-                      class="large is_active"
-                      aria-pressed="true"
-                    >
-                      L 33,900원
-                    </button>
-                    <button type="button" class="medium" aria-pressed="false">
-                      M 28,500원
-                    </button>
-                  </div>
-                </div>
-
-                <div class="edge">
-                  <div class="edge_all">
-                    <div class="icon">!</div>
-                    <div class="text">
-                      <span>도우</span>
-                      <span>●</span>
-                      <span>엣지의 특징</span>
-                    </div>
-                  </div>
-
-                  <div class="choice_all">
-                    <div class="edge_item">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge01.png"
-                            alt="엣지 1"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="text">오리지널 엣지</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="edge_item is_active">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge02.png"
-                            alt="엣지 2"
-                          />
-                        </div>
-                        <div class="text_all has_attribute">
-                          <div class="attribute black">ONLY</div>
-                          <div class="text">체다골드 엣지</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="edge_item">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge03.png"
-                            alt="엣지 3"
-                          />
-                        </div>
-                        <div class="text_all has_attribute">
-                          <div class="attribute black">ONLY</div>
-                          <div class="text">씬도우 체다골드 엣지</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="edge_item">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge04.png"
-                            alt="엣지 4"
-                          />
-                        </div>
-                        <div class="text_all has_attribute">
-                          <div class="attribute pink">BEST</div>
-                          <div class="text">
-                            리치골드 라지<span class="cash">5000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="edge_item">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge05.png"
-                            alt="엣지 5"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="text">
-                            치즈크러스트 골드 라지<span class="cash"
-                              >5000원</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="edge_item">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="img_txt">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/edge06.png"
-                            alt="엣지 6"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="text">
-                            치즈크러스트 라지<span class="cash">4000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="quantity">
-                  <p>수량 선택</p>
-                  <div class="button">
-                    <button type="button" class="minus">-</button>
-                    <div class="num">1</div>
-                    <button type="button" class="plus">+</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="page_bottom">
-              <button
-                type="button"
-                class="add"
-                data-panel="topping"
-                aria-expanded="false"
-              >
-                <div class="text_all">
-                  <div class="text">토핑 추가</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-              <div class="page_add">
-                <div class="add_bottom">
-                  <div class="add_all">
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping01.png"
-                            alt="토핑 1"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            모짜렐라 치즈<span class="cash">+2,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping02.png"
-                            alt="토핑 2"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            파인애플<span class="cash">+2,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping03.png"
-                            alt="토핑 3"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            페퍼로니<span class="cash">+2,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping04.png"
-                            alt="토핑 4"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            블랙 올리브<span class="cash">+1,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping05.png"
-                            alt="토핑 5"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            야채 믹스<span class="cash">+1,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="topping_all">
-                      <button type="button" class="button">
-                        <span class="circle"></span>
-                      </button>
-                      <div class="topping">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/topping06.png"
-                            alt="토핑 6"
-                          />
-                        </div>
-                        <div class="text_all">
-                          <div class="txt">
-                            양송이<span class="cash">+1,000원</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button
-                type="button"
-                class="add"
-                data-panel="side"
-                aria-expanded="false"
-              >
-                <div class="text_all">
-                  <div class="text">추천 사이드</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-              <div class="page_side">
-                <div class="side_bottom">
-                  <div class="side_all">
-                    <div class="side">
-                      <div class="img_all">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/side01.png"
-                            alt="사이드 1"
-                          />
-                        </div>
-                      </div>
-                      <div class="txt_all">
-                        <div class="edge">
-                          <span class="attribute">NEW</span>
-                        </div>
-                        <p>쇼콜라 브라우니 싱글</p>
-                        <p>4,000원</p>
-                      </div>
-                      <div class="button">
-                        <button type="button" class="minus">-</button>
-                        <div class="num">0</div>
-                        <button type="button" class="plus">+</button>
-                      </div>
-                    </div>
-                    <div class="side">
-                      <div class="img_all">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/side02.png"
-                            alt="사이드 2"
-                          />
-                        </div>
-                      </div>
-                      <div class="txt_all">
-                        <div class="edge"></div>
-                        <p>슈프림양념 소이윙봉 2조각</p>
-                        <p>3,400원</p>
-                      </div>
-                      <div class="button">
-                        <button type="button" class="minus">-</button>
-                        <div class="num">0</div>
-                        <button type="button" class="plus">+</button>
-                      </div>
-                    </div>
-                    <div class="side">
-                      <div class="img_all">
-                        <div class="large_img">
-                          <img
-                            class="small_img"
-                            src="img/side03.png"
-                            alt="사이드 3"
-                          />
-                        </div>
-                      </div>
-                      <div class="txt_all">
-                        <div class="edge">
-                          <span class="attribute">HOT</span>
-                        </div>
-                        <p>리치 치즈 파스타</p>
-                        <p>7,900원</p>
-                      </div>
-                      <div class="button">
-                        <button type="button" class="minus">-</button>
-                        <div class="num">0</div>
-                        <button type="button" class="plus">+</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button type="button" class="add" aria-expanded="false">
-                <div class="text_all">
-                  <div class="text">치킨 선택</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-              <button type="button" class="add" aria-expanded="false">
-                <div class="text_all">
-                  <div class="text">파스타&사이드 선택</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-              <button type="button" class="add" aria-expanded="false">
-                <div class="text_all">
-                  <div class="text">음료&기타 선택</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-              <button type="button" class="add" aria-expanded="false">
-                <div class="text_all">
-                  <div class="text">플래츠 추가 구매</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </div>
-              </button>
-            </div>
-          </div>
-
-          <div class="view">
-            <div class="menu">
-              <div class="text_all">
-                <p>피자</p>
-                <p>갈릭 크림 불닭 L (체다골드 엣지 라지)</p>
-              </div>
-            </div>
-            <div class="menu">
-              <div class="text_all">
-                <p>사이드</p>
-                <p>리치 치즈 파스타</p>
-              </div>
-            </div>
-            <div class="menu">
-              <div class="text_all">
-                <p>음료&토핑</p>
-                <p>파인애플</p>
-              </div>
-            </div>
-            <div class="price">
-              <div class="price_all">
-                <div class="text_all">
-                  <p>총 3개 43,800원 담기</p>
-                  <div class="text">
-                    <span>※</span>
-                    <strong>회원할인은 로그인 후 적용됩니다.</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+      <main id="main-content">
+<section class="detail-shell container">
+<div class="detail-layout">
+<div class="detail-visual"><img id="detail-photo" src="img/menu08.png" alt="갈릭 크림 불닭" width="640" height="640" />
+<p>사진은 연출된 이미지로 실제 제품과 다를 수 있습니다.</p>
+  <div class="product-info-links"><button type="button" data-food-tab="origin">원산지 · 영양정보 · 알레르기 유발성분 정보 <span aria-hidden="true">↗</span></button></div>
+</div>
+<div class="detail-options">
+<h1 id="detail-title">갈릭 크림 불닭</h1>
+<p class="detail-intro">직화 불닭 치킨, 진한 갈릭 크림 소스, 모짜렐라 치즈, 스모크 파프리카, 파슬리로 완성한 프리미엄 피자</p>
+<fieldset class="detail-field">
+<legend>01 <strong>사이즈 선택</strong>
+</legend>
+<div class="size-options"><label><input type="radio" name="pizza-size" data-size="L" value="33900" checked /><span>L · 33,900원</span></label><label><input type="radio" name="pizza-size" data-size="M" value="28500" /><span>M · 28,500원</span></label>
+</div>
+</fieldset>
+<fieldset class="detail-field">
+<legend>02 <strong>도우 & 엣지 선택</strong>
+</legend>
+<div class="edge-options"><label><input type="radio" name="pizza-edge" value="0" data-edge="오리지널 엣지" checked /><img src="img/edge01.png" alt="" width="60" height="60" /><span>오리지널 엣지<small>추가 금액 없음</small></span></label><label><input type="radio" name="pizza-edge" value="0" data-edge="체다골드 엣지"  /><img src="img/edge02.png" alt="" width="60" height="60" /><span>체다골드 엣지<small>추가 금액 없음</small></span></label><label><input type="radio" name="pizza-edge" value="0" data-edge="씬도우 체다골드 엣지"  /><img src="img/edge03.png" alt="" width="60" height="60" /><span>씬도우 체다골드 엣지<small>추가 금액 없음</small></span></label><label><input type="radio" name="pizza-edge" value="5000" data-edge="리치골드 라지"  /><img src="img/edge04.png" alt="" width="60" height="60" /><span>리치골드 라지<small>+5,000원</small></span></label><label><input type="radio" name="pizza-edge" value="5000" data-edge="치즈크러스트 골드 라지"  /><img src="img/edge05.png" alt="" width="60" height="60" /><span>치즈크러스트 골드 라지<small>+5,000원</small></span></label><label><input type="radio" name="pizza-edge" value="4000" data-edge="치즈크러스트 라지"  /><img src="img/edge06.png" alt="" width="60" height="60" /><span>치즈크러스트 라지<small>+4,000원</small></span></label>
+</div>
+</fieldset>
+  <div class="detail-count"><strong>피자 수량</strong>
+<div><button type="button" data-quantity="-1" aria-label="수량 줄이기">−</button><output id="detail-quantity" aria-live="polite">1</output><button type="button" data-quantity="1" aria-label="수량 늘리기">+</button>
+</div>
+</div>
+</div></div>
+<section class="detail-addons" aria-label="추가 메뉴 선택">
+<details class="addon-section" id="addon-topping"><summary><span class="addon-heading"><span>03</span><strong>토핑 추가</strong><small>선택</small></span><span class="addon-status" id="topping-status">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><p class="addon-hint">선택한 토핑은 피자 한 판마다 추가됩니다. 여러 가지를 함께 고를 수 있어요.</p><fieldset class="topping-options" id="topping-options"><legend class="sr-only">추가할 토핑 선택</legend></fieldset></div></details>
+<details class="addon-section" id="addon-recommended"><summary><span class="addon-heading"><span>04</span><strong>추천 사이드</strong><small>선택</small></span><span class="addon-status" id="side-status">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><p class="addon-hint">함께 즐기면 더 맛있는 메뉴. 사이드 수량은 피자 수량과 별도로 선택해 주세요.</p><div class="side-options" id="side-options"></div></div></details>
+<details class="addon-section" id="addon-chicken"><summary><span class="addon-heading"><span>05</span><strong>치킨 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="chicken">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="side-options" data-side-category="chicken"></div></div></details>
+<details class="addon-section" id="addon-pasta"><summary><span class="addon-heading"><span>06</span><strong>파스타&사이드 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="pasta">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="side-options" data-side-category="pasta"></div></div></details>
+<details class="addon-section" id="addon-drinks"><summary><span class="addon-heading"><span>07</span><strong>음료&기타 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="drinks">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="addon-empty"><strong>등록된 음료 메뉴가 없습니다.</strong><p>주문 가능한 음료는 이용 매장에서 확인해 주세요.</p></div></div></details>
+<details class="addon-section" id="addon-plates"><summary><span class="addon-heading"><span>08</span><strong>플래츠 추가 구매</strong><small>선택</small></span><span class="addon-status" data-category-status="plates">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="addon-empty"><strong>등록된 추가 구매 상품이 없습니다.</strong><p>이용 가능한 상품은 매장에 따라 달라질 수 있습니다.</p></div></div></details>
+</section><p class="detail-notices">※ 사진은 연출된 이미지이며 실제 제품과 다를 수 있습니다. 장바구니는 화면 체험용으로, 실제 주문·결제는 연결 전입니다.</p></section></main>
+<section class="order-dock" aria-label="선택한 메뉴와 주문 금액"><div class="order-dock-inner container"><div class="dock-preview"><div><strong>피자</strong><p id="dock-pizza">선택한 피자</p></div><div><strong>추가 토핑</strong><p id="dock-toppings">선택 안 함</p></div><div><strong>사이드</strong><p id="dock-sides">선택 안 함</p></div></div><div class="dock-action"><div class="dock-total"><button type="button" id="toggle-order-detail" aria-expanded="false" aria-controls="dock-selection">선택 내역 <span aria-hidden="true">⌃</span></button><strong id="detail-total" aria-live="polite">33,900원</strong></div><button class="btn btn-red" id="add-pizza" type="button">장바구니 담기 <span aria-hidden="true">+</span></button></div><div id="dock-selection" class="dock-selection" hidden><h2>선택한 메뉴</h2><dl class="selection-breakdown" id="selection-breakdown" aria-label="선택한 메뉴 금액 내역"></dl><p>※ 최종 가격과 할인은 실제 주문 매장에서 확인해 주세요.</p></div></div></section>
       <footer>
         <div class="footer_all">
           <div class="footer_left">
@@ -695,7 +232,8 @@
                   <span class="badge-part android-mark2"><img src="img/figma/vector2.svg" alt="" /></span>
                   <span class="badge-part android-mark3"><img src="img/figma/vector3.svg" alt="" /></span>
                   <span class="badge-part android-mark4"><img src="img/figma/vector4.svg" alt="" /></span>
-                </a></div>
+                </a>
+</div>
             </div>
             <div class="sns">
               <div class="logo">
@@ -714,130 +252,5 @@
       </footer>
     </div>
     <!-- //.wrap -->
-
-    <div class="food_overlay" aria-hidden="true"></div>
-    <section
-      class="food_info"
-      role="dialog"
-      aria-modal="true"
-      aria-hidden="true"
-      aria-labelledby="foodInfoTitle"
-    >
-      <div class="main_title">
-        <div class="title_all">
-          <div class="txt_all">
-            <div class="main_txt" id="foodInfoTitle">
-              <span>원산지</span>
-              <span class="dot" aria-hidden="true"></span>
-              <span>영양정보</span>
-              <span class="dot" aria-hidden="true"></span>
-              <span>알레르기 유발성분 정보</span>
-            </div>
-            <button
-              type="button"
-              class="food_close"
-              aria-label="원산지 정보 닫기"
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
-        </div>
-        <div class="main_info">
-          <button
-            type="button"
-            class="ingredient is_active"
-            aria-pressed="true"
-          >
-            원산지
-          </button>
-          <button type="button" class="ingredient" aria-pressed="false">
-            영양정보
-          </button>
-          <button type="button" class="ingredient" aria-pressed="false">
-            알레르기
-          </button>
-        </div>
-      </div>
-      <div class="sub_title">
-        <div class="sub_txt">
-          <button type="button" class="txt is_active" aria-pressed="true">
-            피자
-          </button>
-          <button type="button" class="txt" aria-pressed="false">치킨</button>
-          <button type="button" class="txt" aria-pressed="false">
-            파스타&amp;사이드
-          </button>
-          <button type="button" class="txt" aria-pressed="false">
-            음료&amp;기타
-          </button>
-        </div>
-        <div class="sub_info">
-          <div class="sub_info_all">
-            <div class="info_all is_head">
-              <div class="menu">메뉴</div>
-              <div class="info">원산지정보</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">리얼 BBQ불고기</div>
-              <div class="info">불고기(쇠고기:호주산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">베이컨 포테이토</div>
-              <div class="info">베이컨(돼지고기:외국산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">오리지널 페퍼로니</div>
-              <div class="info">페퍼로니(돼지고기:미국산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">슈퍼슈프림</div>
-              <div class="info">
-                비프(쇠고기:호주산) / 포크(돼지고기:국내산)<br />페퍼로니
-                (돼지고기:미국산) / 베이컨(돼지고기:외국산)
-              </div>
-            </div>
-            <div class="info_all">
-              <div class="menu">트러플 머쉬룸 스테이크</div>
-              <div class="info">비프(쇠고기:호주산) / 새송이버섯(국내산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">스파이시 바베큐 립</div>
-              <div class="info">그릴드 비프(쇠고기:미국산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">쉬림프 갈릭 크림</div>
-              <div class="info">새우(외국산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">갈릭 크림 불닭</div>
-              <div class="info">닭(브라질산)</div>
-            </div>
-            <div class="info_all">
-              <div class="menu">씨푸드킹</div>
-              <div class="info">
-                페페로니(돼지고기:미국산) / 가리비관자(중국산)
-              </div>
-            </div>
-            <div class="info_all">
-              <div class="menu">알로하 하와이</div>
-              <div class="info">
-                페페로니(돼지고기:미국산) / 베이컨(돼지고기:외국산)
-              </div>
-            </div>
-            <div class="info_all">
-              <div class="menu">와일드 스테이크</div>
-              <div class="info">
-                불고기(쇠고기:호주산) / 그릴드비프(쇠고기:미국산)
-              </div>
-            </div>
-            <div class="info_all">
-              <div class="menu">맥앤 베이컨</div>
-              <div class="info">베이컨 (돼지고기:외국산)</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </body>
+</body>
 </html>

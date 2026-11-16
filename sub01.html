@@ -6,28 +6,22 @@
     <meta name="keywords" content="pizza, chicken, pasta" />
     <meta name="author" content="Seunghyun" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizzahut</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <title>피자헛</title>
+    <link rel="shortcut icon" href="img/figma/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/common_media.css" />
     <link rel="stylesheet" href="css/sub01_style.css" />
     <!-- 나의 media css -->
-    <script
-      src="https://kit.fontawesome.com/feb8d1a54e.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/common.js"></script>
     <!-- 나의 js -->
     <link rel="stylesheet" href="css/shared-chrome.css" />
+      <link rel="stylesheet" href="css/redesign.css" />
+    <script src="js/experience.js" defer></script>
   </head>
 
-  <body>
+  <body class="menu-list">
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
     <div class="wrap">
       <header>
         <div class="inner">
@@ -35,11 +29,11 @@
             <h1>
               <a href="index.html"><img src="img/figma/logo.png" alt="피자헛" /></a>
             </h1>
-            <nav>
+            <nav aria-label="주요 메뉴">
               <ul>
                 <li><a href="sub01.html">메뉴</a></li>
-                <li><a href="#">이벤트&제휴</a></li>
-                <li><a href="#">매장찾기</a></li>
+                <li><a href="index.html#events">이벤트 & 혜택</a></li>
+                <li><a href="#" data-location="takeout">매장찾기</a></li>
                 <li>
                   <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
                     >더보기<span class="nav-chevron"><img src="img/figma/live-area.svg" alt="" /></span
@@ -57,7 +51,7 @@
                   <input
                     type="text"
                     class="srh_input"
-                    placeholder="검색어를 입력하세요"
+                    placeholder="검색어를 입력하세요." aria-label="메뉴 검색"
                   />
                   <button type="button">
                     <img src="img/figma/live-area1.svg" alt="검색" />
@@ -67,15 +61,15 @@
             </div>
             <!-- //.search -->
             <div class="login icon_btn">
-              <a href="login.html"><img src="img/figma/log-in.svg" alt="로그인" /></a>
+              <a href="login.html">로그인</a>
             </div>
             <!-- //.login -->
-            <div class="join icon_btn">
-              <a href="login.html"><img src="img/figma/user-plus.svg" alt="회원가입" /></a>
+            <div class="mypage icon_btn">
+              <a href="login.html" aria-label="마이페이지"><img src="img/figma/user.svg" alt="" width="24" height="24" /></a>
             </div>
             <!-- //.join -->
             <div class="cart icon_btn">
-              <a href="login.html"><img src="img/figma/shopping-cart.svg" alt="장바구니" /></a>
+              <a href="#" data-cart aria-label="장바구니"><img src="img/figma/shopping-cart.svg" alt="" /><span class="cart-count">0</span></a>
             </div>
             <!-- //.cart -->
           </div>
@@ -88,10 +82,10 @@
                       <div class="lnb_box">
                         <h3>메뉴</h3>
                         <ul>
-                          <li><a href="#">피자</a></li>
-                          <li><a href="#">치킨</a></li>
-                          <li><a href="#">파스타&사이드</a></li>
-                          <li><a href="#">음료&기타</a></li>
+                          <li><a href="sub01.html">피자</a></li>
+                          <li><a href="sub01.html">치킨</a></li>
+                          <li><a href="sub01.html">파스타&사이드</a></li>
+                          <li><a href="sub01.html">음료&기타</a></li>
                         </ul>
                       </div>
                       <!-- //.lnb_box -->
@@ -153,8 +147,8 @@
                     <!-- //.lnb_sub -->
                   </div>
                   <!-- //.lnb -->
-      
-      <main>
+
+      <main id="main-content">
         <section class="menu_page">
           <div class="menu_top">
             <div class="info_txt">
@@ -187,11 +181,11 @@
             </div>
           </div>
 
-          <div class="menu_bottom">
+          <div class="menu-results container"><p class="results-count" aria-live="polite"></p><label class="menu-search">메뉴 검색<input type="search" placeholder="피자 이름으로 찾아보세요" aria-label="피자 이름 검색" /></label></div><div class="menu_bottom">
             <div class="card_all">
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=0" class="card_link">
                     <img src="img/menu01.png" alt="리얼 BBQ불고기" />
                   </a>
                   <div class="button">
@@ -201,7 +195,7 @@
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>리얼 BBQ불고기</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=0">리얼 BBQ불고기</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -242,7 +236,7 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=1" class="card_link">
                     <img src="img/menu02.png" alt="베이컨 포테이토" />
                   </a>
                   <div class="button">
@@ -252,7 +246,7 @@
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>베이컨 포테이토</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=1">베이컨 포테이토</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -293,7 +287,7 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=2" class="card_link">
                     <img src="img/menu03.png" alt="오리지널 페퍼로니" />
                   </a>
                   <div class="button">
@@ -303,7 +297,7 @@
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>오리지널 페퍼로니</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=2">오리지널 페퍼로니</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -344,7 +338,7 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=3" class="card_link">
                     <img src="img/menu04.png" alt="슈퍼슈프림" />
                   </a>
                   <div class="button">
@@ -354,7 +348,7 @@
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>슈퍼슈프림</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=3">슈퍼슈프림</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -397,17 +391,17 @@
             <div class="card_all">
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=4" class="card_link">
                     <img src="img/menu05.png" alt="트러플 머쉬룸 스테이크" />
                   </a>
                   <div class="button">
-                    <a href="#" class="bt">인기메뉴</a>
+                    <a href="#" class="bt badge-premium">프리미엄</a>
                     <a href="#" class="bt">회원할인</a>
                   </div>
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>트러플 머쉬룸 스테이크</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=4">트러플 머쉬룸 스테이크</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -448,17 +442,17 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=5" class="card_link">
                     <img src="img/menu06.png" alt="스파이시 바베큐 립" />
                   </a>
                   <div class="button">
-                    <a href="#" class="bt">인기메뉴</a>
+                    <a href="#" class="bt badge-premium">프리미엄</a>
                     <a href="#" class="bt">회원할인</a>
                   </div>
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>스파이시 바베큐 립</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=5">스파이시 바베큐 립</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -499,17 +493,17 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="#" class="card_link">
+                  <a href="sub02.html?product=6" class="card_link">
                     <img src="img/menu07.png" alt="쉬림프 갈릭 크림" />
                   </a>
                   <div class="button">
-                    <a href="#" class="bt">인기메뉴</a>
+                    <a href="#" class="bt badge-new">새메뉴</a>
                     <a href="#" class="bt">회원할인</a>
                   </div>
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>쉬림프 갈릭 크림</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=6">쉬림프 갈릭 크림</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">
@@ -550,17 +544,17 @@
 
               <div class="card_sub">
                 <div class="card_img">
-                  <a href="sub02.html" class="card_link">
+                  <a href="sub02.html?product=7" class="card_link">
                     <img src="img/menu08.png" alt="갈릭 크림 불닭" />
                   </a>
                   <div class="button">
-                    <a href="#" class="bt">인기메뉴</a>
+                    <a href="#" class="bt badge-new">새메뉴</a>
                     <a href="#" class="bt">회원할인</a>
                   </div>
                 </div>
                 <div class="info_txt">
                   <div class="name">
-                    <h3>갈릭 크림 불닭</h3>
+                    <h3><a class="menu-product-title" href="sub02.html?product=7">갈릭 크림 불닭</a></h3>
                   </div>
                   <div class="price">
                     <div class="large">

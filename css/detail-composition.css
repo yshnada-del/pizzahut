@@ -1,0 +1,90 @@
+/* Original detail-page structure, restyled with the site's current tokens. */
+.menu-detail{padding-bottom:120px}
+.detail-shell{padding-top:30px;padding-bottom:50px}
+.detail-layout{padding:36px;gap:44px;background:#fff;border:1px solid var(--line);border-radius:20px}
+.detail-visual{top:120px}
+.detail-options{border:0;border-radius:0;padding:0;min-width:0}
+.detail-options h1{margin:0 0 12px}
+.detail-intro{line-height:1.8;word-break:keep-all;text-wrap:pretty}
+.product-info-links{display:block;border:0;margin-top:18px}
+.product-info-links button{width:100%;justify-content:space-between;text-align:left;padding:13px 15px;border:1px solid var(--line);border-radius:6px;font-size:11px;white-space:normal;line-height:1.7}
+.detail-field{margin-top:26px}
+.edge-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.edge-options label{padding:12px 10px;gap:8px;min-width:0;align-items:center}
+.edge-options img{width:44px;height:44px;flex-shrink:0}
+.edge-options label>span{font-size:11px;word-break:keep-all;line-height:1.5}
+.edge-options small{font-size:10px;line-height:1.5}
+.detail-count{margin-top:25px;padding-bottom:0;font-size:13px}
+.detail-addons{margin:24px 0 0;border:1px solid var(--line);border-radius:16px;background:#fff;overflow:hidden}
+.addon-section:last-child{border-bottom:0}
+.addon-section>summary{padding:23px 28px;min-height:78px}
+.addon-heading strong{font-size:15px}
+.addon-body{padding:0 28px 28px}
+.addon-hint{font-size:12px;margin-bottom:18px}
+.topping-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.topping-option{padding:17px;gap:14px;min-height:91px}
+.topping-option img{width:50px;height:50px}
+.topping-option>span{font-size:13px;flex-basis:auto}
+.topping-option small{font-size:11px}
+.side-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.side-option{padding:17px;gap:12px;flex-wrap:wrap;align-items:center;min-width:0}
+.side-option img{width:52px;height:52px}
+.side-option>span{font-size:12px;flex:1;line-height:1.6}
+.side-counter{margin-left:auto}
+.side-counter button{min-width:34px;min-height:34px}
+.addon-empty{padding:24px;background:var(--cream);border:1px solid var(--line);border-radius:8px;font-size:13px}
+.addon-empty strong{font-weight:600}
+.addon-empty p{margin-top:6px;color:var(--muted);font-size:12px;line-height:1.8}
+.detail-notices{font-size:11px;color:var(--muted);line-height:1.8;margin-top:20px}
+.order-dock{position:fixed;bottom:0;left:0;right:0;z-index:950;background:#fffffff5;backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -6px 28px #25231f09}
+.order-dock-inner{position:relative;display:flex;gap:24px;align-items:center;padding-block:18px}
+.dock-preview{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:24px;flex:1;min-width:0}
+.dock-preview>div{min-width:0;padding-right:20px;border-right:1px solid var(--line)}
+.dock-preview strong{font-size:12px;font-weight:700}
+.dock-preview p{font-size:11px;color:var(--muted);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.7}
+.dock-action{width:260px;flex-shrink:0}
+.dock-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px}
+.dock-total button{font-size:10px;color:var(--muted);padding:0;white-space:nowrap;min-height:22px}
+.dock-total button span{display:inline-block;margin-left:4px}
+.dock-total button[aria-expanded="true"] span{transform:rotate(180deg)}
+.dock-total>strong{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums}
+.dock-action .btn{width:100%;min-height:43px;padding:10px 17px}
+.dock-selection{position:absolute;bottom:100%;right:0;width:min(480px,100%);max-height:55dvh;overflow:auto;padding:26px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;box-shadow:0 -12px 40px #25231f0d}
+.dock-selection h2{font-size:18px;font-weight:750;margin-bottom:20px}
+.dock-selection .selection-breakdown{border:0;margin:0;padding:0;gap:14px}
+.dock-selection>p{font-size:10px;color:var(--muted);margin-top:18px;line-height:1.8}
+/* Full menu-information dialog with two levels of tabs. */
+.experience-dialog.food-details-dialog{width:min(960px,calc(100% - 48px));max-height:88dvh;padding:30px;overflow:hidden;display:flex;flex-direction:column}
+.experience-dialog.food-details-dialog:not([open]){display:none}
+.food-details-dialog h2{font-size:24px;margin-top:10px;margin-bottom:12px;padding-right:28px;flex-shrink:0;word-break:keep-all;text-wrap:balance}
+.food-dialog-subtitle{font-size:12px!important;margin:0 0 22px!important;flex-shrink:0}
+.food-tabs{margin-bottom:22px;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:4px;gap:4px;flex-shrink:0}
+.food-tabs button{border:0;border-radius:5px;font-size:13px;min-height:42px}
+.food-tabs button[aria-selected="true"]{background:#fff;color:var(--red);box-shadow:0 1px 5px #25231f0b}
+.food-type-panel{display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.food-categories{display:flex;gap:22px;border-bottom:1px solid var(--line);flex-shrink:0;margin-bottom:20px}
+.food-categories button{font-size:12px;min-height:42px;padding:8px 2px 12px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap}
+.food-categories button[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--red)}
+.food-scroll{overflow:auto;min-height:0;overscroll-behavior:contain;padding-right:3px}
+.food-result-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:15px}
+.food-result-heading h3{font-size:15px;font-weight:700}
+.food-result-heading span{font-size:11px;color:var(--muted)}
+.food-table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+.food-table{border:0;font-size:12px}
+.food-table thead th{background:var(--cream);padding-block:12px}
+.food-table th,.food-table td{padding:13px 16px;border-bottom:1px solid var(--line)}
+.food-table th{width:auto}
+.food-table tbody th{background:#fff;font-weight:500;word-break:keep-all;overflow-wrap:normal}
+.food-table tr:last-child>th,.food-table tr:last-child>td{border-bottom:0}
+.food-table .is-current>th,.food-table .is-current>td{background:#fdf3f4}
+.food-table .menu-name-cell{width:29%}
+.current-menu-tag{display:inline-block;color:var(--red);font-size:9px;white-space:nowrap;margin-top:4px}
+.food-missing{color:#97918a}
+.food-table-nutrition{min-width:750px;table-layout:auto}
+.food-table-nutrition .menu-name-cell{min-width:170px}
+.food-table-nutrition th:not(:first-child),.food-table-nutrition td{text-align:center;font-size:11px}
+.food-category-panel>.food-note{font-size:11px;color:var(--muted);line-height:1.8;margin-top:15px}
+@media(max-width:1100px){.detail-layout{padding:28px;gap:28px}.edge-options label{flex-wrap:wrap}.edge-options label>span{flex-basis:100%}.topping-option{padding:14px;gap:10px}.side-options{grid-template-columns:repeat(2,minmax(0,1fr))}.dock-preview{gap:15px}.dock-preview>div{padding-right:12px}.dock-action{width:235px}}
+@media(max-width:900px){.detail-layout{grid-template-columns:1fr}.detail-visual{position:static;width:min(540px,100%);margin-inline:auto}.detail-options{padding:0}.edge-options{grid-template-columns:repeat(3,minmax(0,1fr))}.edge-options label{padding:14px}.edge-options label>span{flex-basis:100%}.topping-options{grid-template-columns:repeat(2,minmax(0,1fr))}.topping-option{flex-wrap:nowrap}.topping-option>span{flex-basis:auto}.dock-preview>div:nth-child(2){display:none}.dock-preview{grid-template-columns:1fr 1fr}.food-details-dialog h2{font-size:22px}}
+@media(max-width:600px){.menu-detail{padding-bottom:155px}.detail-shell{padding-top:20px;padding-bottom:30px}.detail-layout{padding:20px;gap:28px;border-radius:14px}.detail-options h1{font-size:25px}.detail-intro{font-size:12px}.detail-options .product-info-links button{font-size:10px;padding:12px}.edge-options{grid-template-columns:repeat(2,minmax(0,1fr))}.edge-options label{padding:12px;gap:9px}.edge-options label>span{font-size:11px}.detail-count{margin-top:22px}.detail-addons{margin-top:18px;border-radius:12px}.addon-section>summary{padding:20px 18px;min-height:72px;gap:8px}.addon-heading strong{font-size:13px}.addon-heading>span{font-size:10px}.addon-heading small{display:none}.addon-body{padding:0 18px 20px}.addon-hint{font-size:11px}.topping-options{gap:9px}.topping-option{flex-wrap:wrap;padding:12px;gap:8px}.topping-option>span{flex-basis:100%;font-size:11px}.topping-option img{width:36px;height:36px}.side-options{grid-template-columns:1fr}.side-option{flex-wrap:nowrap;padding:13px;gap:10px}.side-option>span{font-size:11px}.side-option img{width:42px;height:42px}.side-counter button{min-width:29px}.addon-empty{padding:18px;font-size:12px}.addon-empty p{font-size:11px}.detail-notices{font-size:10px}.order-dock-inner{padding-block:12px;display:block}.dock-preview{display:block;margin-bottom:7px}.dock-preview>div{padding:0;border:0}.dock-preview>div:not(:first-child){display:none}.dock-preview strong{display:none}.dock-preview p{font-size:10px;margin:0;-webkit-line-clamp:1}.dock-action{width:100%;display:flex;align-items:center;justify-content:space-between;gap:15px}.dock-total{flex:1;display:flex;flex-direction:column;align-items:start;gap:0;margin:0}.dock-total>strong{font-size:22px}.dock-total button{font-size:10px}.dock-action .btn{width:155px;min-height:47px;font-size:12px}.dock-selection{width:100%;padding:22px;max-height:50dvh}.experience-dialog.food-details-dialog{width:calc(100% - 24px);max-height:88dvh;padding:24px 18px}.food-details-dialog h2{font-size:18px;line-height:1.5;margin-top:8px}.food-dialog-subtitle{font-size:11px!important;margin-bottom:16px!important}.food-tabs{margin-bottom:14px}.food-tabs button{font-size:11px;min-height:39px;padding:8px 3px}.food-categories{gap:0;justify-content:space-between;margin-bottom:16px}.food-categories button{font-size:10px;padding-inline:0}.food-result-heading h3{font-size:13px}.food-table{font-size:11px}.food-table th,.food-table td{padding:11px 10px}.food-table .menu-name-cell{width:35%}.current-menu-tag{font-size:8px}.food-category-panel>.food-note{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.addon-chevron{transition:none}}

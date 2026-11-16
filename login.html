@@ -6,27 +6,22 @@
     <meta name="keywords" content="pizza, chicken, pasta" />
     <meta name="author" content="Seunghyun" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizzahut</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <title>피자헛</title>
+    <link rel="shortcut icon" href="img/figma/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/common_media.css" />
     <link rel="stylesheet" href="css/login_style.css" />
     <!-- 나의 media css -->
-    <script
-      src="https://kit.fontawesome.com/feb8d1a54e.js"
-      crossorigin="anonymous"
-    ></script>
     <script src="js/common.js"></script>
     <script src="js/login.js"></script>
     <link rel="stylesheet" href="css/shared-chrome.css" />
+      <link rel="stylesheet" href="css/redesign.css" />
+    <script src="js/experience.js" defer></script>
   </head>
 
-  <body>
+  <body class="login-page">
+    <a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
     <div class="wrap">
       <header>
         <div class="inner">
@@ -34,11 +29,11 @@
             <h1>
               <a href="index.html"><img src="img/figma/logo.png" alt="피자헛" /></a>
             </h1>
-            <nav>
+            <nav aria-label="주요 메뉴">
               <ul>
                 <li><a href="sub01.html">메뉴</a></li>
-                <li><a href="#">이벤트&제휴</a></li>
-                <li><a href="#">매장찾기</a></li>
+                <li><a href="index.html#events">이벤트 & 혜택</a></li>
+                <li><a href="#" data-location="takeout">매장찾기</a></li>
                 <li>
                   <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
                     >더보기<span class="nav-chevron"><img src="img/figma/live-area.svg" alt="" /></span
@@ -56,7 +51,7 @@
                   <input
                     type="text"
                     class="srh_input"
-                    placeholder="검색어를 입력하세요"
+                    placeholder="검색어를 입력하세요." aria-label="메뉴 검색"
                   />
                   <button type="button">
                     <img src="img/figma/live-area1.svg" alt="검색" />
@@ -66,15 +61,15 @@
             </div>
             <!-- //.search -->
             <div class="login icon_btn">
-              <a href="login.html"><img src="img/figma/log-in.svg" alt="로그인" /></a>
+              <a href="login.html">로그인</a>
             </div>
             <!-- //.login -->
-            <div class="join icon_btn">
-              <a href="login.html"><img src="img/figma/user-plus.svg" alt="회원가입" /></a>
+            <div class="mypage icon_btn">
+              <a href="login.html" aria-label="마이페이지"><img src="img/figma/user.svg" alt="" width="24" height="24" /></a>
             </div>
             <!-- //.join -->
             <div class="cart icon_btn">
-              <a href="login.html"><img src="img/figma/shopping-cart.svg" alt="장바구니" /></a>
+              <a href="#" data-cart aria-label="장바구니"><img src="img/figma/shopping-cart.svg" alt="" /><span class="cart-count">0</span></a>
             </div>
             <!-- //.cart -->
           </div>
@@ -87,10 +82,10 @@
                       <div class="lnb_box">
                         <h3>메뉴</h3>
                         <ul>
-                          <li><a href="#">피자</a></li>
-                          <li><a href="#">치킨</a></li>
-                          <li><a href="#">파스타&사이드</a></li>
-                          <li><a href="#">음료&기타</a></li>
+                          <li><a href="sub01.html">피자</a></li>
+                          <li><a href="sub01.html">치킨</a></li>
+                          <li><a href="sub01.html">파스타&사이드</a></li>
+                          <li><a href="sub01.html">음료&기타</a></li>
                         </ul>
                       </div>
                       <!-- //.lnb_box -->
@@ -152,8 +147,8 @@
                     <!-- //.lnb_sub -->
                   </div>
                   <!-- //.lnb -->
-      
-      <main>
+
+      <main id="main-content">
         <div class="login">
           <div class="login_all">
             <div class="login_top">
