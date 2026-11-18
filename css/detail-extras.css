@@ -6,7 +6,9 @@
 .product-info-links button span{font-size:14px}
 .detail-addons{margin-top:28px;border-top:1px solid var(--line)}
 .addon-section{border-bottom:1px solid var(--line)}
-.addon-section>summary{display:flex;align-items:center;gap:12px;padding:21px 0;cursor:pointer;list-style:none;min-height:65px}
+.addon-section>:is(summary,.addon-disabled){display:flex;align-items:center;gap:12px;padding:21px 0;min-height:65px}
+.addon-section>summary{cursor:pointer;list-style:none}
+.addon-disabled{width:100%;text-align:left}
 .addon-section>summary::-webkit-details-marker{display:none}
 .addon-heading{display:flex;align-items:center;gap:10px}
 .addon-heading>span{font-size:11px;color:var(--red)}

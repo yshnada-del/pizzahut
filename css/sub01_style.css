@@ -70,16 +70,23 @@ main {
     line-height: 1.4;
     letter-spacing: -0.025em;
     color: #a1a1a1;
+    background: none;
+    border: 0;
     border-bottom: 2px solid transparent;
     cursor: pointer;
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.menu_top .menu_txt .txt:hover,
+.menu_top .menu_txt .txt:enabled:hover,
 .menu_top .menu_txt .txt.is_active {
     font-weight: 600;
     color: #111111;
     border-bottom-color: #c83335;
+}
+
+.menu_top .menu_txt .txt:disabled {
+    cursor: default;
+    opacity: 1;
 }
 
 .menu_top .menu_txt .line {
@@ -127,11 +134,32 @@ main {
     white-space: nowrap;
 }
 
-.menu_top .info_btn button:hover,
+.menu_top .info_btn button:enabled:hover,
 .menu_top .info_btn button.is_active {
     border: 0;
     background: #c83335;
     color: #ffffff;
+}
+
+@media (max-width: 800px) {
+    .menu_top :is(.menu_txt, .info_btn) {
+        scrollbar-width: none;
+        user-select: none;
+        cursor: grab;
+    }
+
+    .menu_top :is(.menu_txt, .info_btn)::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu_top :is(.menu_txt, .info_btn) button:disabled {
+        pointer-events: none;
+    }
+
+    .menu_top .is-dragging,
+    .menu_top .is-dragging button {
+        cursor: grabbing;
+    }
 }
 
 .menu_bottom {

@@ -2,12 +2,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
   const storage = {
-    get(key, fallback = '') { try { return JSON.parse(localStorage.getItem(`ph-${key}`)) ?? fallback; } catch { return fallback; } },
-    set(key, value) { try { localStorage.setItem(`ph-${key}`, JSON.stringify(value)); } catch { /* Private browsing still supports this session. */ } }
+    get(key, fallback = '', area = 'localStorage') { try { return JSON.parse(window[area].getItem(`ph-${key}`)) ?? fallback; } catch { return fallback; } },
+    set(key, value, area = 'localStorage') { try { window[area].setItem(`ph-${key}`, JSON.stringify(value)); } catch { /* Storage can be unavailable. */ } }
   };
   const escapeHTML = (value) => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const money = value => Number(value).toLocaleString('ko-KR');
   const params = new URLSearchParams(location.search);
+  const loginLink = $('header .login a');
+  const benefits = $('.benefits');
+  let demoSignedIn = storage.get('demo-signed-in', false, 'sessionStorage') === true;
+  function renderDemoLogin() {
+    loginLink.textContent = demoSignedIn ? '로그아웃' : '로그인';
+    if (!benefits) return;
+
+    $$('[data-benefit-welcome]', benefits).forEach(item => { item.hidden = !demoSignedIn; });
+    $$('[data-benefit-guest]', benefits).forEach(item => { item.hidden = demoSignedIn; });
+    $$('.benefit-links a', benefits).forEach(link => {
+      if (demoSignedIn) {
+        link.removeAttribute('href');
+        link.setAttribute('role', 'link');
+        link.setAttribute('aria-disabled', 'true');
+      } else {
+        link.setAttribute('href', 'login.html');
+        link.removeAttribute('role');
+        link.removeAttribute('aria-disabled');
+      }
+    });
+  }
+  renderDemoLogin();
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) {
+      demoSignedIn = storage.get('demo-signed-in', demoSignedIn, 'sessionStorage') === true;
+      renderDemoLogin();
+    }
+  });
+  loginLink.addEventListener('click', () => {
+    if (demoSignedIn) {
+      demoSignedIn = false;
+      storage.set('demo-signed-in', false, 'sessionStorage');
+      renderDemoLogin();
+    }
+  });
   let orderType = params.get('order') === 'takeout' ? 'takeout' : params.get('order') === 'delivery' ? 'delivery' : storage.get('order', 'delivery');
   storage.set('order', orderType);
   let address = storage.get('address');
@@ -129,21 +164,61 @@ document.addEventListener('DOMContentLoaded', () => {
   $$('[data-cart]').forEach(button => button.addEventListener('click', event => { event.preventDefault(); showCart(); }));
   updateCart();
   if (document.body.classList.contains('menu-list')) {
+    const narrowMenu = window.matchMedia('(max-width: 800px)');
+    $$('.menu_top .menu_txt, .menu_top .info_btn').forEach(row => {
+      let drag = null;
+      let suppressClick = false;
+
+      row.addEventListener('pointerdown', event => {
+        suppressClick = false;
+        if (event.pointerType !== 'mouse' || event.button !== 0 || !narrowMenu.matches || row.scrollWidth <= row.clientWidth) return;
+        drag = { id: event.pointerId, x: event.clientX, scrollLeft: row.scrollLeft };
+      });
+      row.addEventListener('pointermove', event => {
+        if (event.pointerId !== drag?.id) return;
+        const distance = event.clientX - drag.x;
+        if (!suppressClick) {
+          if (Math.abs(distance) < 6) return;
+          suppressClick = true;
+          row.setPointerCapture(event.pointerId);
+          row.classList.add('is-dragging');
+        }
+        row.scrollLeft = drag.scrollLeft - distance;
+      });
+
+      function stopDrag(event) {
+        if (event.pointerId !== drag?.id) return;
+        drag = null;
+        row.classList.remove('is-dragging');
+      }
+      row.addEventListener('pointerup', stopDrag);
+      row.addEventListener('pointercancel', stopDrag);
+      row.addEventListener('lostpointercapture', stopDrag);
+      row.addEventListener('pointerleave', event => {
+        if (!suppressClick) stopDrag(event);
+      });
+      row.addEventListener('click', event => {
+        if (!suppressClick || !event.detail) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+    });
+
     const cards = $$('.card_sub'); const normalize = text => text.replace(/\s/g,'').replaceAll('페페로니','페퍼로니').toLowerCase();
     cards.forEach((card,i) => { card.dataset.name = $('.name h3',card).textContent; $$('.card_link,.menu-product-title',card).forEach(link => link.href = `sub02.html?product=${i}&order=${orderType}`); $$('.bt',card).forEach(link => { link.removeAttribute('href'); }); });
-    const filters = $$('.info_btn button'); let activeFilter = params.get('filter') === 'new' ? '새메뉴' : '전체메뉴'; let category = '피자';
-    const groups = {'전체메뉴':cards.map((_,i)=>i),'새메뉴':[6,7],'인기메뉴':[0,1,2,3],'프리미엄':[0,4,5,6],'US 오리진(오리지널, 팬, 씬)':[2,3],'1인메뉴':[],'하프앤하프':[],'세트':[]};
+    const filters = $$('.info_btn button:enabled'); let activeFilter = params.get('filter') === 'new' ? '새메뉴' : '전체메뉴';
+    const groups = {'전체메뉴':cards.map((_,i)=>i),'새메뉴':[6,7],'인기메뉴':[0,1,2,3],'프리미엄':[0,4,5,6]};
     const search = $('.menu-search input'); search.value = params.get('q') || '';
     const empty = document.createElement('p'); empty.className = 'menu-empty'; empty.hidden = true; $('.menu_bottom').append(empty);
     function filter() {
       let count = 0;
-      cards.forEach((card,i) => { const shown = category === '피자' && (groups[activeFilter] || []).includes(i) && normalize(card.dataset.name).includes(normalize(search.value)); card.hidden = !shown; if(shown) count++; });
-      $('.results-count').textContent = `${category} · ${count}개의 메뉴`;
+      cards.forEach((card,i) => { const shown = (groups[activeFilter] || []).includes(i) && normalize(card.dataset.name).includes(normalize(search.value)); card.hidden = !shown; if(shown) count++; });
+      $('.results-count').textContent = `피자 · ${count}개의 메뉴`;
       empty.hidden = count > 0; empty.textContent = search.value ? '검색 결과가 없어요. 다른 피자 이름으로 찾아보세요.' : '이 카테고리의 메뉴는 준비 중입니다. 전체 피자 메뉴를 둘러보세요.';
       filters.forEach(button => { const selected = normalize(button.textContent) === normalize(activeFilter); button.classList.toggle('is_active',selected); button.setAttribute('aria-pressed',selected); });
     }
     filters.forEach(button => button.addEventListener('click', () => { activeFilter = button.textContent.replace(/\s+/g,'').trim(); filter(); }));
-    $$('.menu_txt .txt').forEach(item => { item.tabIndex=0; item.setAttribute('role','button'); const select = () => { category = item.textContent.trim(); $$('.menu_txt .txt').forEach(tab => {tab.classList.toggle('is_active',tab === item);tab.setAttribute('aria-pressed',tab===item);}); filter(); }; item.addEventListener('click',select); item.addEventListener('keydown',event => {if(event.key==='Enter'||event.key===' '){event.preventDefault();select();}}); });
+    $('.menu_txt .txt:enabled').addEventListener('click', filter);
     search.addEventListener('input',filter); filter();
   }
   if (document.body.classList.contains('menu-detail')) {
@@ -231,16 +306,37 @@ document.addEventListener('DOMContentLoaded', () => {
     $$('[data-food-tab]').forEach(button=>button.addEventListener('click',()=>showFoodInformation(button.dataset.foodTab)));
     renderTotal();
   }
-  if(document.body.classList.contains('login-page')) {
-    const id=$('input.id'); const pw=$('input.pw'); id.setAttribute('aria-label','아이디');id.autocomplete='username';pw.setAttribute('aria-label','비밀번호');pw.autocomplete='current-password';
-    const tabs=$$('main .login .box_all .box');
-    tabs.forEach((tab,i) => tab.addEventListener('click', () => { if(i) location.href=`sub01.html?order=${orderType}`; }));
-    const login=$('.login_box'); login.addEventListener('click',event=>{event.preventDefault();if(!id.value.trim()){id.focus();id.setCustomValidity('아이디를 입력해 주세요.');id.reportValidity();return;}if(!pw.value){pw.focus();pw.setCustomValidity('비밀번호를 입력해 주세요.');pw.reportValidity();return;}openDialog('로그인 연결 안내','<p>현재는 UI를 확인하는 화면입니다. 실제 회원 인증과 소셜 로그인은 연결되어 있지 않습니다.</p><a class="btn btn-red" href="sub01.html">비회원으로 메뉴 둘러보기</a>');});
-    [id,pw].forEach(input=>{input.addEventListener('input',()=>input.setCustomValidity(''));input.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();login.click();}});});
+  if (document.body.classList.contains('login-page')) {
+    const demoId = 'pizzahut-demo';
+    const demoPassword = 'PizzaDemo123!';
+    const form = $('.login_all');
+    const id = $('.id', form);
+    const password = $('.pw', form);
+    const saveId = $('#save_id', form);
+    const menuUrl = `sub01.html?order=${encodeURIComponent(orderType)}`;
+    saveId.checked = storage.get('saved-demo-id') === demoId;
+    id.value = demoId;
+    password.value = demoPassword;
+    $('.box.inactive', form).addEventListener('click', () => { location.href = menuUrl; });
+
+    [id, password].forEach(input => {
+      input.addEventListener('input', () => password.setCustomValidity(''));
+    });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (id.value.trim() !== demoId || password.value !== demoPassword) {
+        password.setCustomValidity('체험용 아이디 또는 비밀번호가 일치하지 않아요.');
+        password.reportValidity();
+        return;
+      }
+      storage.set('demo-signed-in', true, 'sessionStorage');
+      storage.set('saved-demo-id', saveId.checked ? demoId : '');
+      location.replace('index.html');
+    });
   }
   // Unimplemented destinations explain their current state instead of jumping to the top.
   $$('a[href="#"]').forEach(link => {
-    if(link.matches('.more_btn,.login_box,[data-location],[data-cart],[data-business]'))return;
+    if(link.matches('.more_btn,[data-location],[data-cart],[data-business]'))return;
     link.addEventListener('click',event=>{event.preventDefault();openDialog(link.textContent.trim() || link.getAttribute('aria-label') || '서비스 안내','<p>현재 디자인 미리보기에서 이 서비스는 연결 전입니다. 메뉴 탐색과 장바구니 담기를 체험해 보세요.</p><a class="btn btn-red" href="sub01.html">메뉴 둘러보기</a>');});
   });
 });

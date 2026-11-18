@@ -32,7 +32,7 @@
             <nav aria-label="주요 메뉴">
               <ul>
                 <li><a href="sub01.html">메뉴</a></li>
-                <li><a href="index.html#events">이벤트 & 혜택</a></li>
+                <li><button type="button" class="nav-disabled" disabled>이벤트 & 혜택</button></li>
                 <li><a href="#" data-location="takeout">매장찾기</a></li>
                 <li>
                   <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
@@ -65,7 +65,7 @@
             </div>
             <!-- //.login -->
             <div class="mypage icon_btn">
-              <a href="login.html" aria-label="마이페이지"><img src="img/figma/user.svg" alt="" width="24" height="24" /></a>
+              <button type="button" aria-label="마이페이지" disabled><img src="img/figma/user.svg" alt="" width="24" height="24" /></button>
             </div>
             <!-- //.join -->
             <div class="cart icon_btn">
@@ -156,17 +156,17 @@
                 <h2>메뉴 소개</h2>
               </div>
               <div class="menu_txt">
-                <p class="txt is_active">피자</p>
+                <button type="button" class="txt is_active" aria-pressed="true">피자</button>
                 <span class="line"></span>
-                <p class="txt">핫딜</p>
+                <button type="button" class="txt" disabled>핫딜</button>
                 <span class="line"></span>
-                <p class="txt">이주의 추천메뉴</p>
+                <button type="button" class="txt" disabled>이주의 추천메뉴</button>
                 <span class="line"></span>
-                <p class="txt">치킨</p>
+                <button type="button" class="txt" disabled>치킨</button>
                 <span class="line"></span>
-                <p class="txt">파스타&사이드</p>
+                <button type="button" class="txt" disabled>파스타&사이드</button>
                 <span class="line"></span>
-                <p class="txt">음료&기타</p>
+                <button type="button" class="txt" disabled>음료&기타</button>
               </div>
             </div>
             <div class="info_btn">
@@ -174,10 +174,10 @@
               <button type="button">새메뉴</button>
               <button type="button" class="is_active">인기메뉴</button>
               <button type="button">프리미엄</button>
-              <button type="button">US 오리진<br />(오리지널, 팬, 씬)</button>
-              <button type="button">1인메뉴</button>
-              <button type="button">하프앤하프</button>
-              <button type="button">세트</button>
+              <button type="button" disabled>US 오리진<br />(오리지널, 팬, 씬)</button>
+              <button type="button" disabled>1인메뉴</button>
+              <button type="button" disabled>하프앤하프</button>
+              <button type="button" disabled>세트</button>
             </div>
           </div>
 

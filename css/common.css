@@ -138,13 +138,21 @@ header .right_info {
   height: 24px;
 }
 
-header .right_info .icon_btn a {
+header .right_info .icon_btn :is(a, button) {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #111;
+}
+
+header .right_info .icon_btn button {
+  padding: 0;
+}
+
+header .right_info .icon_btn button:disabled img {
+  pointer-events: none;
 }
 
 header .right_info .icon_btn i,

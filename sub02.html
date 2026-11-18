@@ -34,7 +34,7 @@
             <nav aria-label="주요 메뉴">
               <ul>
                 <li><a href="sub01.html">메뉴</a></li>
-                <li><a href="index.html#events">이벤트 & 혜택</a></li>
+                <li><button type="button" class="nav-disabled" disabled>이벤트 & 혜택</button></li>
                 <li><a href="#" data-location="takeout">매장찾기</a></li>
                 <li>
                   <a href="#" class="more_btn" aria-expanded="false" aria-controls="main-nav"
@@ -67,7 +67,7 @@
             </div>
             <!-- //.login -->
             <div class="mypage icon_btn">
-              <a href="login.html" aria-label="마이페이지"><img src="img/figma/user.svg" alt="" width="24" height="24" /></a>
+              <button type="button" aria-label="마이페이지" disabled><img src="img/figma/user.svg" alt="" width="24" height="24" /></button>
             </div>
             <!-- //.join -->
             <div class="cart icon_btn">
@@ -182,8 +182,8 @@
 <details class="addon-section" id="addon-recommended"><summary><span class="addon-heading"><span>04</span><strong>추천 사이드</strong><small>선택</small></span><span class="addon-status" id="side-status">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><p class="addon-hint">함께 즐기면 더 맛있는 메뉴. 사이드 수량은 피자 수량과 별도로 선택해 주세요.</p><div class="side-options" id="side-options"></div></div></details>
 <details class="addon-section" id="addon-chicken"><summary><span class="addon-heading"><span>05</span><strong>치킨 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="chicken">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="side-options" data-side-category="chicken"></div></div></details>
 <details class="addon-section" id="addon-pasta"><summary><span class="addon-heading"><span>06</span><strong>파스타&사이드 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="pasta">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="side-options" data-side-category="pasta"></div></div></details>
-<details class="addon-section" id="addon-drinks"><summary><span class="addon-heading"><span>07</span><strong>음료&기타 선택</strong><small>선택</small></span><span class="addon-status" data-category-status="drinks">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="addon-empty"><strong>등록된 음료 메뉴가 없습니다.</strong><p>주문 가능한 음료는 이용 매장에서 확인해 주세요.</p></div></div></details>
-<details class="addon-section" id="addon-plates"><summary><span class="addon-heading"><span>08</span><strong>플래츠 추가 구매</strong><small>선택</small></span><span class="addon-status" data-category-status="plates">선택 안 함</span><span class="addon-chevron" aria-hidden="true"><img src="img/figma/live-area.svg" alt="" width="16" height="16" /></span></summary><div class="addon-body"><div class="addon-empty"><strong>등록된 추가 구매 상품이 없습니다.</strong><p>이용 가능한 상품은 매장에 따라 달라질 수 있습니다.</p></div></div></details>
+<div class="addon-section" id="addon-drinks"><button type="button" class="addon-disabled" disabled><span class="addon-heading"><span>07</span><strong>음료&기타 선택</strong></span><span class="addon-status">선택 불가</span></button></div>
+<div class="addon-section" id="addon-plates"><button type="button" class="addon-disabled" disabled><span class="addon-heading"><span>08</span><strong>플래츠 추가 구매</strong></span><span class="addon-status">선택 불가</span></button></div>
 </section><p class="detail-notices">※ 사진은 연출된 이미지이며 실제 제품과 다를 수 있습니다. 장바구니는 화면 체험용으로, 실제 주문·결제는 연결 전입니다.</p></section></main>
 <section class="order-dock" aria-label="선택한 메뉴와 주문 금액"><div class="order-dock-inner container"><div class="dock-preview"><div><strong>피자</strong><p id="dock-pizza">선택한 피자</p></div><div><strong>추가 토핑</strong><p id="dock-toppings">선택 안 함</p></div><div><strong>사이드</strong><p id="dock-sides">선택 안 함</p></div></div><div class="dock-action"><div class="dock-total"><button type="button" id="toggle-order-detail" aria-expanded="false" aria-controls="dock-selection">선택 내역 <span aria-hidden="true">⌃</span></button><strong id="detail-total" aria-live="polite">33,900원</strong></div><button class="btn btn-red" id="add-pizza" type="button">장바구니 담기 <span aria-hidden="true">+</span></button></div><div id="dock-selection" class="dock-selection" hidden><h2>선택한 메뉴</h2><dl class="selection-breakdown" id="selection-breakdown" aria-label="선택한 메뉴 금액 내역"></dl><p>※ 최종 가격과 할인은 실제 주문 매장에서 확인해 주세요.</p></div></div></section>
       <footer>
