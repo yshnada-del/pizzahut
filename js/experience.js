@@ -62,10 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
   dialog.addEventListener('close', () => returnFocus?.focus());
+  const addressToast = document.createElement('div');
+  addressToast.className = 'address-toast';
+  addressToast.setAttribute('role', 'status');
+  document.body.append(addressToast);
+  let addressToastTimer;
+
   function updateAddress() { $$('[data-address-copy]').forEach(el => el.textContent = address || '주소를 설정해 주세요'); }
   function locationDialog(type) {
     openDialog(type === 'takeout' ? '어느 동네에서 주문할까요?' : '피자를 받을 곳을 알려주세요.', `<p>주소를 저장하면 다음에도 편하게 이용할 수 있어요.<br />현재는 화면 체험용으로, 실제 매장 검색은 연결 전입니다.</p><form id="address-form"><label for="order-address">도로명 주소 또는 동네</label><input id="order-address" name="address" autocomplete="street-address" placeholder="예: 서울시 영등포구 여의도동" required minlength="2" maxlength="120" value="${escapeHTML(address)}" /><button class="btn btn-red" type="submit">이 주소로 설정</button></form>`, { showBrand: false });
-    $('#address-form', dialog).addEventListener('submit', event => { event.preventDefault(); address = $('#order-address', dialog).value.trim(); if (address.length < 2) return; storage.set('address', address); updateAddress(); dialog.close(); });
+    $('#address-form', dialog).addEventListener('submit', event => {
+      event.preventDefault();
+      const enteredAddress = $('#order-address', dialog).value.trim();
+      if (enteredAddress.length < 2) return;
+      address = enteredAddress;
+      storage.set('address', address);
+      updateAddress();
+      dialog.close();
+
+      clearTimeout(addressToastTimer);
+      addressToast.textContent = '현재 준비중입니다.';
+      addressToastTimer = setTimeout(() => { addressToast.textContent = ''; }, 3000);
+    });
   }
   updateAddress();
   $$('[data-location]').forEach(button => button.addEventListener('click', event => { event.preventDefault(); locationDialog(button.dataset.location); }));
